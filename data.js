@@ -10,7 +10,7 @@ const CONCERTS = [
     date: "2026-07-10",
     title: "문래동 프리덤",
     venue: "문래 후케즈",
-    photoUrl: "https://www.instagram.com/p/DanYcARgSuZ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+    photoUrl: "https://www.instagram.com/p/DanYcARgSuZ/?utm_source=ig_web_copy_link",
     setlist: [
       "Get Over",
       "Loud Hot Crazy",
@@ -27,6 +27,7 @@ const CONCERTS = [
     date: "2026-06-27",
     title: "Live Club Day",
     venue: "홍대 클럽FF",
+    photoUrl: "https://www.instagram.com/p/DaDf06LAfFn/?utm_source=ig_web_copy_link",
     setlist: [
       "Young & Wild",
       "Get Over",
@@ -45,6 +46,7 @@ const CONCERTS = [
     date: "2026-06-05",
     title: "크랙샷 X 더픽스 Our Target",
     venue: "홍대 웨스트브릿지",
+    photoUrl: "https://www.instagram.com/p/DZO4GYDEcxg/?utm_source=ig_web_copy_link",
     setlist: [
       "Young & Wild",
       "Get Over",
