@@ -50,17 +50,17 @@ const CONCERTS = [
     setlist: [
       "Young & Wild",
       "Get Over",
-      "Loud Hot Crazy",
+      "LOUD! HOT! CRAZY!",
       "Warriors",
       "FIRE",
-      "Time to Rise",
+      "Time To Rise",
       "Shake It!",
       "Overdrive",
       "Bye Goodbye",
       "Follow Me",
-      "INFP w.더픽스",
-      "Don't Stop Believin w.더픽스",
-      "Don't Look Back w.더픽스"
+      "INFP",
+      "Don't Stop Believin",
+      "Don't Look Back"
     ]
   },
   {
