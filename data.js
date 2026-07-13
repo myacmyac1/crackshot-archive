@@ -17,7 +17,7 @@ const CONCERTS = [
       "Bang Your Head",
       "Young & Wild",
       "INFP",
-      "Follow me"
+      "Follow me",
       "Kickstart My Heart"
     ]
   },
@@ -31,9 +31,9 @@ const CONCERTS = [
       "Get Over",
       "DASH",
       "Puppeteer",
-      "Take it down"
-      "Shake it"
-      "INFP"
+      "Take it down",
+      "Shake it",
+      "INFP",
       "Loud Hot Crazy",
       "Follow me",
       "Paradise city"
@@ -54,7 +54,7 @@ const CONCERTS = [
       "Shake it",
       "Overdrive",
       "Bye Goodbye",
-      "Follow me"
+      "Follow me",
       "INFP with.더픽스",
       "Don't Stop Believin",
       "Don't Look Back"
