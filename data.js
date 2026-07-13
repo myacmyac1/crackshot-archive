@@ -10,6 +10,7 @@ const CONCERTS = [
     date: "2026-07-10",
     title: "문래동 프리덤",
     venue: "문래 후케즈",
+    photoUrl: "https://www.instagram.com/p/DanYcARgSuZ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
     setlist: [
       "Get Over",
       "Loud Hot Crazy",
