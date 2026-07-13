@@ -1,0 +1,229 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
+
+:root {
+  --bg: #121113;
+  --panel: #19181b;
+  --line: #2c2a2e;
+  --ink: #f2f0ea;
+  --ink-dim: #8f8b90;
+  --accent: #ffd400;
+  --accent-ink: #121113;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ---------------- Header ---------------- */
+.header {
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 10;
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 24px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.band-name {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+}
+
+.year-nav {
+  display: flex;
+  gap: 4px;
+}
+
+.year-tab {
+  background: none;
+  border: 1px solid var(--line);
+  color: var(--ink-dim);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 7px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.year-tab:hover {
+  color: var(--ink);
+  border-color: var(--ink-dim);
+}
+
+.year-tab.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+/* ---------------- Layout ---------------- */
+.main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 24px 80px;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 28px;
+  align-items: start;
+}
+
+@media (max-width: 800px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------------- Concert list (blocks) ---------------- */
+.concert-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.concert-block {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 10px;
+  padding: 16px 18px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.concert-block:hover {
+  border-color: var(--ink-dim);
+}
+
+.concert-block.selected {
+  border-color: var(--accent);
+  background: #201f16;
+}
+
+.concert-block .date {
+  font-size: 12px;
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.concert-block .title {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 4px 0 2px;
+}
+
+.concert-block .venue {
+  font-size: 13px;
+  color: var(--ink-dim);
+}
+
+.concert-block .count {
+  margin-top: 8px;
+  display: inline-block;
+  font-size: 11px;
+  color: var(--ink-dim);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 2px 9px;
+}
+
+/* ---------------- Setlist view (right panel) ---------------- */
+.setlist-view {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 14px;
+  padding: 28px 26px;
+  position: sticky;
+  top: 100px;
+}
+
+.setlist-view .sv-date {
+  font-size: 12px;
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.setlist-view .sv-title {
+  font-size: 21px;
+  font-weight: 800;
+  margin: 6px 0 4px;
+  line-height: 1.3;
+}
+
+.setlist-view .sv-venue {
+  font-size: 13px;
+  color: var(--ink-dim);
+  margin-bottom: 22px;
+}
+
+.setlist-view .sv-count {
+  font-size: 12px;
+  color: var(--ink-dim);
+  margin-left: 6px;
+}
+
+.song-row {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.song-row:last-child {
+  border-bottom: none;
+}
+
+.song-no {
+  font-size: 13px;
+  color: var(--ink-dim);
+  font-weight: 700;
+  width: 22px;
+  flex-shrink: 0;
+}
+
+.song-name {
+  font-size: 16px;
+  font-weight: 600;
+  flex-grow: 1;
+}
+
+.song-gap {
+  font-size: 12px;
+  color: var(--ink-dim);
+  white-space: nowrap;
+}
+
+.song-gap.first {
+  color: var(--accent);
+}
+
+/* ---------------- Footer ---------------- */
+.footer {
+  text-align: center;
+  color: var(--ink-dim);
+  font-size: 11px;
+  letter-spacing: 1px;
+  padding: 24px;
+  border-top: 1px solid var(--line);
+}
