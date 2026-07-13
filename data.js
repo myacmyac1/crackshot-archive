@@ -233,6 +233,7 @@ const CONCERTS = [
       "Skyfall",
       "INFP"
     ]
+ },
   {
     id: "2025-09-27",
     date: "2025-09-27",
