@@ -6,6 +6,36 @@
 
 const CONCERTS = [
   {
+    id: "2026-07-31",
+    date: "2026-07-31",
+    title: "2026 장흥 ROCK 페스티벌",
+    venue: "장흥 물축제",
+    photoUrl: "null",
+    setlist: [
+      "UNKNOWN"
+    ]
+  },
+  {
+    id: "2026-07-25",
+    date: "2026-07-25",
+    title: "HAIL TO THE KING",
+    venue: "홍대 클럽FF",
+    photoUrl: "null",
+    setlist: [
+      "UNKNOWN"
+    ]
+  },
+  {
+    id: "2026-07-19",
+    date: "2026-07-19",
+    title: "STILL ROLLING Vol.4",
+    venue: "홍대 BENDER",
+    photoUrl: "null",
+    setlist: [
+      "UNKNOWN"
+    ]
+  },
+  {
     id: "2026-07-10",
     date: "2026-07-10",
     title: "문래동 프리덤",
