@@ -116,10 +116,14 @@ function renderSetlistView() {
     `;
   }).join("");
 
+  const photoLink = concert.photoUrl
+    ? `<a class="sv-photo-link" href="${concert.photoUrl}" target="_blank" rel="noopener noreferrer">사진 보기 ↗</a>`
+    : "";
+
   view.innerHTML = `
     <div class="sv-date">${formatDate(concert.date)}</div>
     <div class="sv-title">${concert.title}</div>
-    <div class="sv-venue">${concert.venue}<span class="sv-count">· ${concert.setlist.length}곡</span></div>
+    <div class="sv-venue">${concert.venue}<span class="sv-count">· ${concert.setlist.length}곡</span>${photoLink}</div>
     <div class="song-list">${rows}</div>
   `;
 }
