@@ -76,8 +76,7 @@ function renderConcertList() {
     block.innerHTML = `
       <div class="date">${formatDate(concert.date)}</div>
       <div class="title">${concert.title}</div>
-      <div class="venue">${concert.venue}</div>
-      <span class="count">${concert.setlist.length}곡</span>
+      <div class="venue">${concert.venue}</div><span class="count">${concert.setlist.length}곡</span>
     `;
     block.onclick = () => {
       selectedConcertId = concert.id;
