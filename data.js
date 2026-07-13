@@ -52,7 +52,7 @@ const CONCERTS = [
       "Get Over",
       "Loud Hot Crazy",
       "Warriors",
-      "Fire",
+      "FIRE",
       "Time to Rise",
       "Shake It!",
       "Overdrive",
@@ -201,6 +201,39 @@ const CONCERTS = [
     ]
   },
   {
+    id: "2025-10-17",
+    date: "2025-10-17",
+    title: "광주 버스킹 월드컵 32강",
+    venue: "광주 국립아시아문화전당 하늘마당",
+    setlist: [
+      "The Show Must Go On",
+      "LOUD! HOT! CRAZY!",
+      "난 괜찮아",
+      "아파트"
+    ]
+  },
+  {
+    id: "2025-10-18",
+    date: "2025-10-18",
+    title: "광주 버스킹 월드컵 16강",
+    venue: "광주 국립아시아문화전당 하늘마당",
+    setlist: [
+      "Warriors",
+      "FIRE",
+      "Young & Wild",
+      "Overdrive"
+    ]
+  },
+ {
+    id: "2025-10-19",
+    date: "2025-10-19",
+    title: "광주 버스킹 월드컵 결선",
+    venue: "광주 국립아시아문화전당 하늘마당",
+    setlist: [
+      "Skyfall",
+      "INFP"
+    ]
+  {
     id: "2025-09-27",
     date: "2025-09-27",
     title: "양천 락 페스티벌",
@@ -234,8 +267,8 @@ const CONCERTS = [
     id: "2025-09-10",
     date: "2025-09-10",
     title: "뒤란",
-    venue: "https://www.instagram.com/crackshot_official/p/DObIrAygV6X/",
-    photoUrl: "",
+    venue: "울산 문화예술회관 야외공연장",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/DObIrAygV6X/",
     setlist: [
       "Overdrive",
       "Get Over",
@@ -362,7 +395,7 @@ const CONCERTS = [
       "Time To Rise",
       "Going Under",
       "Drowning",
-      "Walking On Fire",
+      "Walking On FIRE",
       "Midnight Crime",
       "Abracadabra",
       "Let Me Out",
@@ -388,7 +421,7 @@ const CONCERTS = [
     venue: "영등포아트홀",
     photoUrl: "https://www.instagram.com/crackshot_official/p/DK4rYjdBCdi/",
     setlist: [
-      "Walking On Fire",
+      "Walking On FIRE",
       "Young & Wild",
       "Night Rider",
       "Shake It!",
@@ -440,8 +473,8 @@ const CONCERTS = [
       "Young & Wild",
       "Night Rider",
       "DASH",
-      "Walking On Fire",
-      "World On Fire",
+      "Walking On FIRE",
+      "World On FIRE",
       "Go Away",
       "Shake It!",
       "INFP",
@@ -467,7 +500,7 @@ const CONCERTS = [
       "Young & Wild",
       "Night Rider",
       "DASH",
-      "Walking On Fire",
+      "Walking On FIRE",
       "Shout at the Devil",
       "Go Away",
       "Slow Motion",
@@ -493,7 +526,7 @@ const CONCERTS = [
       "Young & Wild",
       "Night Rider",
       "DASH",
-      "Walking On Fire",
+      "Walking On FIRE",
       "Youth gone wild",
       "Go Away",
       "Shake It!",
@@ -518,7 +551,7 @@ const CONCERTS = [
       "Young & Wild",
       "Night Rider",
       "DASH",
-      "Ready To Fire",
+      "Ready To FIRE",
       "You give love a bad name",
       "Go Away",
       "Shake It!",
@@ -544,7 +577,7 @@ const CONCERTS = [
       "Young & Wild",
       "Night Rider",
       "DASH",
-      "Walking On Fire",
+      "Walking On FIRE",
       "Wild Side",
       "Go Away",
       "Shake It!",
@@ -553,7 +586,7 @@ const CONCERTS = [
       "Shine",
       "Break Down",
       "Get Over",
-      "World On Fire",
+      "World On FIRE",
       "Overdrive",
       "Paradise City",
       "Follow Me",
@@ -566,7 +599,7 @@ const CONCERTS = [
     venue: "CKL 스테이지",
     photoUrl: "https://www.instagram.com/crackshot_official/p/DGVkzY2BTtX/",
     setlist: [
-      "Walking On Fire",
+      "Walking On FIRE",
       "Young & Wild",
       "Night Rider",
       "DASH",
@@ -584,6 +617,15 @@ const CONCERTS = [
       "Overdrive",
       "무녀도",
       "Follow Me",
+    ]
+  },
+  {
+    id: "2025-02-10",
+    date: "2025-02-10",
+    title: "불후의 명곡 윤수일편",
+    venue: "KBS 신관",
+    setlist: [
+      "아파트"
     ]
   },
   {
