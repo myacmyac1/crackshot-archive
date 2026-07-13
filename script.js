@@ -29,6 +29,17 @@ function getDaysSinceLastPlayed(songName, currentDate) {
   return null; // 이전에 연주된 기록 없음
 }
 
+// ---------- 이 곡을 올해(currentDate 기준 연도) 몇 번째로 연주하는지 계산 ----------
+// 같은 연도의 공연들 중, 현재 공연을 포함해서 이 곡이 몇 번 등장했는지 셉니다.
+function getPlayCountThisYear(songName, currentDate) {
+  const year = currentDate.slice(0, 4);
+  return sortedConcerts.filter(c =>
+    c.date.slice(0, 4) === year &&
+    c.date <= currentDate &&
+    c.setlist.includes(songName)
+  ).length;
+}
+
 // ---------- 연도 탭 렌더링 ----------
 function renderYearNav() {
   const years = [...new Set(sortedConcerts.map(c => c.date.slice(0, 4)))].sort((a, b) => b - a);
@@ -86,15 +97,21 @@ function renderSetlistView() {
     return;
   }
 
+  const year = concert.date.slice(0, 4);
+
   const rows = concert.setlist.map((song, i) => {
     const days = getDaysSinceLastPlayed(song, concert.date);
     const gapText = days === null ? "첫 연주" : `${days}일만`;
     const gapClass = days === null ? "song-gap first" : "song-gap";
+
+    const yearCount = getPlayCountThisYear(song, concert.date);
+    const yearCountText = `${year}년 ${yearCount}번째`;
+
     return `
       <div class="song-row">
         <div class="song-no">${String(i + 1).padStart(2, "0")}</div>
         <div class="song-name">${song}</div>
-        <div class="${gapClass}">${gapText}</div>
+        <div class="${gapClass}">${gapText}<span class="song-divider">|</span>${yearCountText}</div>
       </div>
     `;
   }).join("");
