@@ -6,39 +6,58 @@
 
 const CONCERTS = [
   {
-    id: "2026-05-10",
-    date: "2026-05-10",
-    title: "CRACKSHOT LIVE : IGNITION",
-    venue: "홍대 롤링홀",
+    id: "2026-07-10",
+    date: "2026-07-10",
+    title: "문래동 프리덤",
+    venue: "문래 후케즈",
     setlist: [
-      "Wildfire",
-      "Ashes",
-      "Reload",
-      "Nightcall",
-      "Static"
+      "Get Over",
+      "Loud Hot Crazy",
+      "Puppeteer",
+      "Bang Your Head",
+      "Young & Wild",
+      "INFP",
+      "Follow me"
+      "Kickstart My Heart"
     ]
   },
   {
-    id: "2025-11-22",
-    date: "2025-11-22",
-    title: "CRACKSHOT 단독공연 : AFTERGLOW",
-    venue: "무브홀",
+    id: "2026-06-27",
+    date: "2026-06-27",
+    title: "Live Club Day",
+    venue: "홍대 클럽FF",
     setlist: [
-      "Wildfire",
-      "Nightcall",
-      "Blueprint"
+      "Young & Wild",
+      "Get Over",
+      "DASH",
+      "Puppeteer",
+      "Take it down"
+      "Shake it"
+      "INFP"
+      "Loud Hot Crazy",
+      "Follow me",
+      "Paradise city"
     ]
   },
   {
-    id: "2025-08-03",
-    date: "2025-08-03",
-    title: "인디밴드 페스티벌 2025",
-    venue: "잠실종합운동장 특설무대",
+    id: "2026-06-05",
+    date: "2026-06-05",
+    title: "크랙샷 X 더픽스 Our Target",
+    venue: "홍대 웨스트브릿지",
     setlist: [
-      "Static",
-      "Ashes",
-      "Blueprint",
-      "Wildfire"
+      "Young & Wild",
+      "Get Over",
+      "Loud Hot Crazy",
+      "Warriors",
+      "Fire",
+      "Time to Rise",
+      "Shake it",
+      "Overdrive",
+      "Bye Goodbye",
+      "Follow me"
+      "INFP with.더픽스",
+      "Don't Stop Believin",
+      "Don't Look Back"
     ]
   }
 ];
