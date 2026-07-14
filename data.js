@@ -693,7 +693,7 @@ const CONCERTS = [
 {
     id: "2024-11-23",
     date: "2024-11-23",
-    title: "SUDDENLY ROCK FESTA",
+    title: "SUDDENLY ROCK FESTA (순서수정필요)",
     venue: "고양아람누리 아람극장",
     photoUrl: "https://www.instagram.com/crackshot_official/p/DCtn0UKhMN_/",
 
@@ -761,7 +761,7 @@ const CONCERTS = [
 {
     id: "2024-08-28",
     date: "2024-08-28",
-    title: "뒤란",
+    title: "뒤란 (순서수정필요)",
     venue: "울산 문화예술회",
     photoUrl: "https://www.instagram.com/crackshot_official/p/C_N3tViS4hT/",
 
@@ -829,7 +829,7 @@ const CONCERTS = [
 {
     id: "2024-07-28",
     date: "2024-07-28",
-    title: "크랙샷 앨범 발매 기념 공연 충돌",
+    title: "크랙샷 앨범 발매 기념 공연 충돌 (순서수정필요)",
     venue: "홍대 롤링홀",
     photoUrl: "https://www.instagram.com/crackshot_official/p/C99xPWxSlH9/",
 
@@ -1112,7 +1112,7 @@ const CONCERTS = [
 {
     id: "2023-10-19",
     date: "2023-10-19",
-    title: "광주 그라제 Rising Bullet",
+    title: "광주 그라제 Rising Bullet (순서수정필요)",
     venue: "광주 예술의전당",
     photoUrl: "https://www.instagram.com/crackshot_official/p/CylUUcaROcN/ ",
 
@@ -1291,7 +1291,7 @@ const CONCERTS = [
 {
     id: "2023-08-04",
     date: "2023-08-04",
-    title: "보령 머드축제 머드나잇스탠드",
+    title: "보령 머드축제 머드나잇스탠드 (순서수정필요)",
     venue: "대천해수욕장",
     photoUrl: "https://www.instagram.com/crackshot_official/p/CvhcKmTpgqq/",
 
@@ -1356,7 +1356,7 @@ const CONCERTS = [
 {
     id: "2023-04-26",
     date: "2023-04-26",
-    title: "뒤란",
+    title: "뒤란 (순서수정필요)",
     venue: "울산 문화예술회관",
     photoUrl: "https://www.instagram.com/crackshot_official/p/CrgI2JYJwDx/",
 
@@ -1572,7 +1572,7 @@ const CONCERTS = [
 {
     id: "2022-10-30",
     date: "2022-10-30",
-    title: "Danny's HALLOKITTY",
+    title: "Danny's HALLOKITTY (순서수정필요)",
     venue: "웨스트브릿지",
     photoUrl: " ",
 
@@ -1688,7 +1688,7 @@ const CONCERTS = [
 {
     id: "2022-09-16",
     date: "2022-09-16",
-    title: "칠포재즈페스티벌",
+    title: "칠포재즈페스티벌 (순서수정필요)",
     venue: "칠포해수욕장 상설무대",
     photoUrl: "https://www.instagram.com/crackshot_official/p/CirMcxbJ5LN/",
 
