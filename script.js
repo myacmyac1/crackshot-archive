@@ -60,7 +60,7 @@ function getCountLabel(concert) {
 
 // ---------- (포지션체인지), (solo) 같은 태그를 포인트 컬러로 강조 ----------
 function highlightTags(songName) {
-  return songName.replace(/\((포지션체인지|solo)\)/gi, '<span class="song-tag">($1)</span>');
+  return songName.replace(/\((포지션 체인지|solo)\)/gi, '<span class="song-tag">($1)</span>');
 }
 
 // ---------- 연도 탭 렌더링 ----------
