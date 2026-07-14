@@ -582,7 +582,7 @@ const CONCERTS = [
       "Young & Wild",
       "Night Rider",
       "DASH",
-      "Ready To FIRE",
+      "Ready to Fire",
       "You give love a bad name",
       "Go Away",
       "Shake It!",
@@ -1193,7 +1193,7 @@ const CONCERTS = [
       "Shake It!",
       "Slow Motion ",
       "My Friend",
-      "Ready To Fire ",
+      "Ready to Fire ",
       "Break Down",
       "Warriors ",
       "INFP",
@@ -1424,7 +1424,7 @@ const CONCERTS = [
 
     setlist: [
       "DASH ",
-      "Ready To Fire ",
+      "Ready to Fire ",
       "Shake It!",
       "Walking On Fire ",
       "달의 몰락",
@@ -1453,7 +1453,7 @@ const CONCERTS = [
 
     setlist: [
       "DASH ",
-      "Ready To Fire ",
+      "Ready to Fire ",
       "Shake It!",
       "Midnight Crime",
       "달의 몰락 ",
@@ -1481,7 +1481,7 @@ const CONCERTS = [
 
     setlist: [
       "DASH ",
-      "Ready To Fire ",
+      "Ready to Fire ",
       "Shake It!",
       "Walking On Fire ",
       "달의 몰락",
@@ -1724,7 +1724,7 @@ const CONCERTS = [
       "Let Me Out",
       "Cynic (CYAN Bass solo)",
       "Midnight Crime ",
-      "Ready To Fire",
+      "Ready to Fire",
       "Fellowship",
       "Break Down",
       "Summer Rain (Willy.K Guitar solo)",
