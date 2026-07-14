@@ -20,7 +20,7 @@ function normalizeSong(song) {
 }
 
 function isUnknown(song) {
-  return normalizeSong(song) === "unknown";
+  return normalizeSong(song) === "COMING SOON";
 }
 
 // ---------- 이 곡을 이전에 연주한 날로부터 며칠만인지 계산 ----------
