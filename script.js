@@ -130,11 +130,20 @@ function renderSetlistView() {
       statsHtml = `<div class="song-gap">-</div>`;
     } else {
       const days = getDaysSinceLastPlayed(song, concert.date);
-      const gapText = days === null ? "첫 연주" : `${days}일만`;
-      const gapClass = days === null ? "song-gap first" : "song-gap";
       const yearCount = getPlayCountThisYear(song, concert.date);
       const yearCountText = `${year}년 ${yearCount}번째`;
-      statsHtml = `<div class="${gapClass}">${gapText}<span class="song-divider">|</span>${yearCountText}</div>`;
+
+      // "n년 n번째"에서 1번째면 강조색
+      const yearCountHtml = yearCount === 1
+        ? `<span class="stat-highlight">${yearCountText}</span>`
+        : yearCountText;
+
+      // 이 곡을 처음 연주하는 거라면 "첫 연주"를 강조색으로 앞에 붙임 (그 외엔 표시 안 함)
+      const firstEverHtml = days === null
+        ? `<span class="stat-highlight">첫 연주</span><span class="song-divider">|</span>`
+        : "";
+
+      statsHtml = `<div class="song-gap">${firstEverHtml}${yearCountHtml}</div>`;
     }
 
     return `
@@ -147,7 +156,7 @@ function renderSetlistView() {
   }).join("");
 
   const photoLink = concert.photoUrl
-    ? `<a class="sv-photo-link" href="${concert.photoUrl}" target="_blank" rel="noopener noreferrer">추억의 책장 ↗</a>`
+    ? `<a class="sv-photo-link" href="${concert.photoUrl}" target="_blank" rel="noopener noreferrer">사진 보기 ↗</a>`
     : "";
 
   view.innerHTML = `

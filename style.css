@@ -6,7 +6,7 @@
   --line: #2c2a2e;
   --ink: #f2f0ea;
   --ink-dim: #8f8b90;
-  --accent: #de0f00;
+  --accent: #ffd400;
   --accent-ink: #121113;
 }
 
@@ -249,8 +249,9 @@ html, body {
   flex-shrink: 0;
 }
 
-.song-gap.first {
+.stat-highlight {
   color: var(--accent);
+  font-weight: 700;
 }
 
 .song-divider {
