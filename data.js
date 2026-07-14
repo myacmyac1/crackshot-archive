@@ -12,7 +12,7 @@ const CONCERTS = [
     venue: "장흥 물축제",
     photoUrl: "null",
     setlist: [
-      "UNKNOWN"
+      "COMING SOON"
     ]
   },
   {
@@ -22,7 +22,7 @@ const CONCERTS = [
     venue: "홍대 클럽FF",
     photoUrl: "null",
     setlist: [
-      "UNKNOWN"
+      "COMING SOON"
     ]
   },
   {
@@ -32,7 +32,7 @@ const CONCERTS = [
     venue: "홍대 BENDER",
     photoUrl: "null",
     setlist: [
-      "UNKNOWN"
+      "COMING SOON"
     ]
   },
   {
