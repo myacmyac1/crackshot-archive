@@ -655,6 +655,7 @@ const CONCERTS = [
     date: "2025-02-10",
     title: "불후의 명곡 윤수일편",
     venue: "KBS 신관",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/DGX3MhVhpLY/",
     setlist: [
       "아파트"
     ]
@@ -693,8 +694,8 @@ const CONCERTS = [
     id: "2024-11-23",
     date: "2024-11-23",
     title: "SUDDENLY ROCK FESTA",
-    venue: " ",
-    photoUrl: " ",
+    venue: "고양아람누리 아람극장",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/DCtn0UKhMN_/",
 
     setlist: [
       "Go Away",
@@ -712,8 +713,8 @@ const CONCERTS = [
     id: "2024-10-20",
     date: "2024-10-20",
     title: "정관 생태하천 학습문화축제",
-    venue: " ",
-    photoUrl: " ",
+    venue: "기장군 정관",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/DBWJNDsy-dU/",
 
     setlist: [
       "난 괜찮아",
@@ -729,8 +730,8 @@ const CONCERTS = [
     id: "2024-10-13",
     date: "2024-10-13",
     title: "경기 인디 뮤직 페스티벌",
-    venue: " ",
-    photoUrl: " ",
+    venue: "파주 임진각",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/DBD13FQyqdA/",
 
     setlist: [
       "Night Rider",
@@ -745,8 +746,8 @@ const CONCERTS = [
     id: "2024-10-12",
     date: "2024-10-12",
     title: "인천 레코드 플랫폼 쇼케이스",
-    venue: " ",
-    photoUrl: " ",
+    venue: "인천아트플랫폼",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/DBBfBJ0yCvg/",
 
     setlist: [
       "FIRE",
@@ -761,8 +762,8 @@ const CONCERTS = [
     id: "2024-08-28",
     date: "2024-08-28",
     title: "뒤란",
-    venue: " ",
-    photoUrl: " ",
+    venue: "울산 문화예술회",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/C_N3tViS4hT/",
 
     setlist: [
       "INFP",
@@ -777,8 +778,8 @@ const CONCERTS = [
     id: "2024-08-27",
     date: "2024-08-27",
     title: "라라라온",
-    venue: " ",
-    photoUrl: " ",
+    venue: "홍대 상상마당",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/C_LQ3FGSMqM/",
 
     setlist: [
       "Night Rider",
@@ -794,8 +795,8 @@ const CONCERTS = [
     id: "2024-08-10",
     date: "2024-08-10",
     title: "JUMF 2024",
-    venue: " ",
-    photoUrl: " ",
+    venue: "전주종합경기장",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/C-fGgEKysQX/",
 
     setlist: [
       "Night Rider",
@@ -812,8 +813,8 @@ const CONCERTS = [
     id: "2024-08-02",
     date: "2024-08-02",
     title: "보령 머드락 페스타",
-    venue: " ",
-    photoUrl: " ",
+    venue: "대천해수욕장",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/C-KlKaCyb2Q/",
 
     setlist: [
       "DASH",
@@ -829,8 +830,8 @@ const CONCERTS = [
     id: "2024-07-28",
     date: "2024-07-28",
     title: "크랙샷 앨범 발매 기념 공연 충돌",
-    venue: " ",
-    photoUrl: " ",
+    venue: "홍대 롤링홀",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/C99xPWxSlH9/",
 
     setlist: [
       "Time To Rise",
@@ -859,8 +860,8 @@ const CONCERTS = [
     id: "2024-07-06",
     date: "2024-07-06",
     title: "240706 We Are Crackshot vol.3",
-    venue: " ",
-    photoUrl: " ",
+    venue: "꿈빛극장",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/C9FMb2kyJ72/",
 
     setlist: [
       "Walking On Fire",
@@ -885,12 +886,12 @@ const CONCERTS = [
     ]
 },
 
-{
+  {
     id: "2024-06-22",
     date: "2024-06-22",
     title: "도시 음악을 기록하다 ROCK WILL NEVER DIE",
-    venue: " ",
-    photoUrl: " ",
+    venue: "부평 아트센",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/C8g35zRShu5/",
 
     setlist: [
       "Warriors",
@@ -900,13 +901,25 @@ const CONCERTS = [
       "Follow Me"
     ]
 },
+  
+{
+    id: "2024-06-24",
+    date: "2024-06-24",
+    title: "불후의 명곡 싸이편",
+    venue: "KBS 신관",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/C8zBIxty4Hx/",
+
+    setlist: [
+      "예술이야"
+    ]
+},
 
 {
     id: "2024-06-02",
     date: "2024-06-02",
     title: "화성 뱃놀이 축제",
-    venue: " ",
-    photoUrl: " ",
+    venue: "전곡항",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/C7tXtW_JxBQ/",
 
     setlist: [
       "난 괜찮아",
@@ -919,8 +932,8 @@ const CONCERTS = [
     id: "2024-05-25",
     date: "2024-05-25",
     title: "경주 EDM 페스티벌",
-    venue: " ",
-    photoUrl: " ",
+    venue: "봉황대 광장",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/C7Y9KavpZsi/",
 
     setlist: [
       "난 괜찮아",
@@ -937,8 +950,8 @@ const CONCERTS = [
     id: "2024-05-14",
     date: "2024-05-14",
     title: "남원 춘향제 판락페스티벌 ",
-    venue: " ",
-    photoUrl: " ",
+    venue: "요천로",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/C68wiRAJFUp/",
 
     setlist: [
       "난 괜찮아",
@@ -954,8 +967,8 @@ const CONCERTS = [
     id: "2024-05-10",
     date: "2024-05-10",
     title: "We Are Crackshot vol.2",
-    venue: " ",
-    photoUrl: " ",
+    venue: "웨스트브릿지",
+    photoUrl: " https://www.instagram.com/crackshot_official/p/C6yq4UPJm64/",
 
     setlist: [
       "DASH ",
@@ -983,8 +996,8 @@ const CONCERTS = [
     id: "2024-01-30",
     date: "2024-01-30",
     title: "경록절 로큰롤 파라다이스",
-    venue: " ",
-    photoUrl: " ",
+    venue: "파라다이스 시티",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/C2uagXwMCo9/",
 
     setlist: [
       "DASH",
@@ -1001,8 +1014,8 @@ const CONCERTS = [
     id: "2024-01-20",
     date: "2024-01-20",
     title: "We Are Crackshot vol.1",
-    venue: " ",
-    photoUrl: " ",
+    venue: "홍대 롤링홀",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/C2UfwlHpsxW/",
 
     setlist: [
       "Time To Rise ",
@@ -1032,8 +1045,8 @@ const CONCERTS = [
     id: "2023-12-24",
     date: "2023-12-24",
     title: "크랙샷 팬미팅 MERRY CRACKS-MAS",
-    venue: " ",
-    photoUrl: " ",
+    venue: "벨로주 망원",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/C1PDwyMpWDc/",
 
     setlist: [
       "Rockin' Around The Christmas Tree",
@@ -1045,8 +1058,8 @@ const CONCERTS = [
     id: "2023-12-17",
     date: "2023-12-17",
     title: "HERO 2023",
-    venue: " ",
-    photoUrl: " ",
+    venue: "프리즘홀",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/C084lXNJsmY/",
 
     setlist: [
       "Time To Rise",
@@ -1063,8 +1076,8 @@ const CONCERTS = [
     id: "2023-11-23",
     date: "2023-11-23",
     title: "씬디 프레젠트",
-    venue: " ",
-    photoUrl: " ",
+    venue: "프리즘홀",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/Cz_qOTEpbh6/",
 
     setlist: [
       "Time To Rise",
@@ -1083,8 +1096,8 @@ const CONCERTS = [
     id: "2023-10-28",
     date: "2023-10-28",
     title: "문경 락 앤 소울푸드 페스티벌",
-    venue: " ",
-    photoUrl: " ",
+    venue: "영강체육공원",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/Cy8bIwopkyE/",
 
     setlist: [
       "난 괜찮아",
@@ -1100,8 +1113,8 @@ const CONCERTS = [
     id: "2023-10-19",
     date: "2023-10-19",
     title: "광주 그라제 Rising Bullet",
-    venue: " ",
-    photoUrl: " ",
+    venue: "광주 예술의전당",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/CylUUcaROcN/ ",
 
     setlist: [
       "Warriors ",
@@ -1123,8 +1136,8 @@ const CONCERTS = [
     id: "2023-10-15",
     date: "2023-10-15",
     title: "2023 경기 인디 뮤직 페스티벌",
-    venue: " ",
-    photoUrl: " ",
+    venue: "안산 와~스타디움",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/CyaouNaJTON/",
 
     setlist: [
       "Warriors",
@@ -1141,8 +1154,8 @@ const CONCERTS = [
     id: "2023-10-14",
     date: "2023-10-14",
     title: "크랙샷 10주년 공연 A Live Bullet 막공",
-    venue: " ",
-    photoUrl: " ",
+    venue: "고양문화재단",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/CyYUqS4JIrC/",
 
     setlist: [
       "DASH ",
@@ -1169,8 +1182,8 @@ const CONCERTS = [
     id: "2023-10-13",
     date: "2023-10-13",
     title: "크랙샷 10주년 공연 A Live Bullet 첫공",
-    venue: " ",
-    photoUrl: " ",
+    venue: "고양문화재단",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/CyV7l9qJVQj/",
 
     setlist: [
       "Let Me Out",
@@ -1197,8 +1210,8 @@ const CONCERTS = [
     id: "2023-10-07",
     date: "2023-10-07",
     title: "해남 오시아노 뮤직 페스타",
-    venue: " ",
-    photoUrl: " ",
+    venue: "해남 오시아노 캠핑장",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/CyGQdIZJPeP/",
 
     setlist: [
       "Shake It!",
@@ -1214,8 +1227,8 @@ const CONCERTS = [
     id: "2023-09-02",
     date: "2023-09-02",
     title: "2023 렛츠락 페스티벌",
-    venue: " ",
-    photoUrl: " ",
+    venue: "난지한강공원",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/CwrvbUAJ_IO/",
 
     setlist: [
       "DASH",
@@ -1231,8 +1244,8 @@ const CONCERTS = [
     id: "2023-08-25",
     date: "2023-08-25",
     title: "동두천 락 페스티벌",
-    venue: " ",
-    photoUrl: " ",
+    venue: "소요산입구 광장 특설무대",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/CwXehqRppk2/",
 
     setlist: [
       "Overdrive",
@@ -1248,8 +1261,8 @@ const CONCERTS = [
     id: "2023-08-15",
     date: "2023-08-15",
     title: "815 Seoul, My Soul",
-    venue: " ",
-    photoUrl: " ",
+    venue: "광화문 육조마당",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/Cv98DmLprdE/",
 
     setlist: [
       "Warriors",
@@ -1262,8 +1275,8 @@ const CONCERTS = [
     id: "2023-08-05",
     date: "2023-08-05",
     title: "철원 다슬기축제 칼군무 경연대회",
-    venue: " ",
-    photoUrl: " ",
+    venue: "화강 쉬리공원",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/CvkGPC4pvfI/",
 
     setlist: [
       "달의 몰락",
@@ -1279,8 +1292,8 @@ const CONCERTS = [
     id: "2023-08-04",
     date: "2023-08-04",
     title: "보령 머드축제 머드나잇스탠드",
-    venue: " ",
-    photoUrl: " ",
+    venue: "대천해수욕장",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/CvhcKmTpgqq/",
 
     setlist: [
       "난 괜찮아",
@@ -1296,8 +1309,8 @@ const CONCERTS = [
     id: "2023-06-18",
     date: "2023-06-18",
     title: "로맨틱파티",
-    venue: " ",
-    photoUrl: " ",
+    venue: "웨스트브릿지",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/CtqEgc8pSyQ/",
 
     setlist: [
       "Warriors",
@@ -1312,8 +1325,8 @@ const CONCERTS = [
     id: "2023-06-09",
     date: "2023-06-09",
     title: "Speak Out",
-    venue: " ",
-    photoUrl: " ",
+    venue: "홍대 롤링홀",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/CtSzXmopVVK/",
 
     setlist: [
       "Break Down ",
@@ -1344,13 +1357,13 @@ const CONCERTS = [
     id: "2023-04-26",
     date: "2023-04-26",
     title: "뒤란",
-    venue: " ",
-    photoUrl: " ",
+    venue: "울산 문화예술회관",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/CrgI2JYJwDx/",
 
     setlist: [
       "Goodbye My Love ",
-      "INFP ",
-      "난 괜찮아 ",
+      "INFP",
+      "난 괜찮아",
       "Follow Me",
       "달의 몰락"
     ]
@@ -1360,15 +1373,15 @@ const CONCERTS = [
     id: "2023-04-09",
     date: "2023-04-09",
     title: "경기도청 봄꽃축제",
-    venue: " ",
-    photoUrl: " ",
+    venue: "경기도구청사",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/Cqz62lsphSc/",
 
     setlist: [
       "난 괜찮아",
       "Shake It! ",
       "Slow Motion",
       "Overdrive",
-      "달의 몰락 ",
+      "달의 몰락",
       "Follow Me",
       "잘못된 만남"
     ]
@@ -1378,8 +1391,8 @@ const CONCERTS = [
     id: "2023-03-25",
     date: "2023-03-25",
     title: "크랙샷 전국 투어 HELLO MY LOVE - 전주",
-    venue: " ",
-    photoUrl: " ",
+    venue: "더뮤지션",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/CqNz211JzQm/",
 
     setlist: [
       "DASH ",
@@ -1406,8 +1419,8 @@ const CONCERTS = [
     id: "2023-03-19",
     date: "2023-03-19",
     title: "크랙샷 전국 투어 HELLO MY LOVE - 대구",
-    venue: " ",
-    photoUrl: " ",
+    venue: "클럽 헤비",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/CqNz211JzQm/",
 
     setlist: [
       "DASH ",
@@ -1435,8 +1448,8 @@ const CONCERTS = [
     id: "2023-03-18",
     date: "2023-03-18",
     title: "크랙샷 전국 투어 HELLO MY LOVE - 부산",
-    venue: " ",
-    photoUrl: " ",
+    venue: "부산 상상마당",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/CqNz211JzQm/",
 
     setlist: [
       "DASH ",
@@ -1463,8 +1476,8 @@ const CONCERTS = [
     id: "2023-03-11",
     date: "2023-03-11",
     title: "크랙샷 전국 투어 HELLO MY LOVE - 서울",
-    venue: " ",
-    photoUrl: " ",
+    venue: "홍대 롤링홀",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/CprsUNgJMFK/",
 
     setlist: [
       "DASH ",
@@ -1492,8 +1505,8 @@ const CONCERTS = [
     id: "2023-02-12",
     date: "2023-02-12",
     title: "2023 경록절 마포르네상스",
-    venue: " ",
-    photoUrl: " ",
+    venue: "마포아트센터",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/CojjxT7pgcb/",
 
     setlist: [
       "Shake It!",
@@ -1508,8 +1521,8 @@ const CONCERTS = [
     id: "2022-12-30",
     date: "2022-12-30",
     title: "2022 크랙샷 연말 콘서트 RELOAD",
-    venue: " ",
-    photoUrl: " ",
+    venue: "구름아래소극장",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/CmzC8Jop77O/",
 
     setlist: [
       "Shake It!",
@@ -1540,9 +1553,9 @@ const CONCERTS = [
 {
     id: "2022-11-26",
     date: "2022-11-26",
-    title: "라이브 클럽 데이",
-    venue: " ",
-    photoUrl: " ",
+    title: "Live Club Day",
+    venue: "홍대 클럽FF",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/ClbUknkJdEE/",
 
     setlist: [
       "Midnight Crime ",
@@ -1560,7 +1573,7 @@ const CONCERTS = [
     id: "2022-10-30",
     date: "2022-10-30",
     title: "Danny's HALLOKITTY",
-    venue: " ",
+    venue: "웨스트브릿지",
     photoUrl: " ",
 
     setlist: [
@@ -1587,8 +1600,8 @@ const CONCERTS = [
     id: "2022-10-06",
     date: "2022-10-06",
     title: "계명문화대학교 축제",
-    venue: " ",
-    photoUrl: " ",
+    venue: "계명문화대학교",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/CjX9L9dpdfN/",
 
     setlist: [
       "Shake It! ",
@@ -1607,8 +1620,8 @@ const CONCERTS = [
     id: "2022-09-25",
     date: "2022-09-25",
     title: "동두천 락페스티벌",
-    venue: " ",
-    photoUrl: " ",
+    venue: "소요산입구 광장 특설무대",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/Ci9tQWiJsZL/",
 
     setlist: [
       "Walking On Fire ",
@@ -1624,8 +1637,8 @@ const CONCERTS = [
     id: "2022-09-24",
     date: "2022-09-24",
     title: "Flight092324",
-    venue: " ",
-    photoUrl: " ",
+    venue: "구름아래소극장",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/Ci6nDtcpAg8/",
 
     setlist: [
       "You're invited (but your friend can't come)",
@@ -1650,8 +1663,8 @@ const CONCERTS = [
     id: "2022-09-23",
     date: "2022-09-23",
     title: "Flight092324",
-    venue: " ",
-    photoUrl: " ",
+    venue: "구름아래소극장",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/Ci6nDtcpAg8/",
 
     setlist: [
       "Alone Again",
@@ -1676,8 +1689,8 @@ const CONCERTS = [
     id: "2022-09-16",
     date: "2022-09-16",
     title: "칠포재즈페스티벌",
-    venue: " ",
-    photoUrl: " ",
+    venue: "칠포해수욕장 상설무대",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/CirMcxbJ5LN/",
 
     setlist: [
       "Fellowship",
@@ -1697,8 +1710,8 @@ const CONCERTS = [
     id: "2022-08-27",
     date: "2022-08-27",
     title: "크랙샷콘서트 Wave Re:Turns",
-    venue: " ",
-    photoUrl: " ",
+    venue: "웨스트브릿지",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/ChzNWmCJ_tA/",
 
     setlist: [
       "Walking On Fire ",
@@ -1731,8 +1744,8 @@ const CONCERTS = [
     id: "2022-08-05",
     date: "2022-08-05",
     title: "펜타포트 락 페스티벌",
-    venue: " ",
-    photoUrl: " ",
+    venue: "달빛축제공원",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/Cg-58OsJLXN/",
 
     setlist: [
       "Shake It!",
@@ -1745,12 +1758,26 @@ const CONCERTS = [
     ]
 },
 
+  {
+    id: "2022-03-27",
+    date: "2022-03-27",
+    title: "열린음악회",
+    venue: "KBS",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/Cbm8SN2FoA4/",
+
+    setlist: [
+      "I don't want to miss a thing",
+      "Still loving you"
+    ]
+},
+
+
 {
     id: "2022-03-27",
     date: "2022-03-27",
     title: "크랙샷 9주년 콘서트",
-    venue: " ",
-    photoUrl: " ",
+    venue: "yes24 라이브",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/Cbm-_tXlyu1/",
 
     setlist: [
       "Shake It!",
