@@ -13,14 +13,25 @@ function formatDate(dateStr) {
   return dateStr.replaceAll("-", ".");
 }
 
+// ---------- 곡 이름 정규화: 대소문자 무시 + 앞뒤 공백 무시 ----------
+// 비교(같은 곡인지 판단)할 때만 사용하고, 화면에 보여줄 땐 원래 이름을 씁니다.
+function normalizeSong(song) {
+  return song.trim().toLowerCase();
+}
+
+function isUnknown(song) {
+  return normalizeSong(song) === "unknown";
+}
+
 // ---------- 이 곡을 이전에 연주한 날로부터 며칠만인지 계산 ----------
 function getDaysSinceLastPlayed(songName, currentDate) {
+  const target = normalizeSong(songName);
   const past = sortedConcerts
     .filter(c => c.date < currentDate)
     .sort((a, b) => new Date(b.date) - new Date(a.date)); // 최신순
 
   for (const concert of past) {
-    if (concert.setlist.includes(songName)) {
+    if (concert.setlist.some(s => normalizeSong(s) === target)) {
       const diffMs = new Date(currentDate) - new Date(concert.date);
       const days = Math.round(diffMs / (1000 * 60 * 60 * 24));
       return days;
@@ -32,12 +43,24 @@ function getDaysSinceLastPlayed(songName, currentDate) {
 // ---------- 이 곡을 올해(currentDate 기준 연도) 몇 번째로 연주하는지 계산 ----------
 // 같은 연도의 공연들 중, 현재 공연을 포함해서 이 곡이 몇 번 등장했는지 셉니다.
 function getPlayCountThisYear(songName, currentDate) {
+  const target = normalizeSong(songName);
   const year = currentDate.slice(0, 4);
   return sortedConcerts.filter(c =>
     c.date.slice(0, 4) === year &&
     c.date <= currentDate &&
-    c.setlist.includes(songName)
+    c.setlist.some(s => normalizeSong(s) === target)
   ).length;
+}
+
+// ---------- 곡 수 라벨: UNKNOWN이 포함되어 있으면 "-", 아니면 "N곡" ----------
+function getCountLabel(concert) {
+  const hasUnknown = concert.setlist.some(isUnknown);
+  return hasUnknown ? "-" : `${concert.setlist.length}곡`;
+}
+
+// ---------- (포지션체인지), (solo) 같은 태그를 포인트 컬러로 강조 ----------
+function highlightTags(songName) {
+  return songName.replace(/\((포지션체인지|solo)\)/gi, '<span class="song-tag">($1)</span>');
 }
 
 // ---------- 연도 탭 렌더링 ----------
@@ -76,8 +99,8 @@ function renderConcertList() {
     block.innerHTML = `
       <div class="date">${formatDate(concert.date)}</div>
       <div class="title">${concert.title}</div>
-      <div class="venue">${concert.venue}<span class="count">${concert.setlist.length}곡</span></div>
-      
+      <div class="venue">${concert.venue}</div>
+      <span class="count">${getCountLabel(concert)}</span>
     `;
     block.onclick = () => {
       selectedConcertId = concert.id;
@@ -100,18 +123,26 @@ function renderSetlistView() {
   const year = concert.date.slice(0, 4);
 
   const rows = concert.setlist.map((song, i) => {
-    const days = getDaysSinceLastPlayed(song, concert.date);
-    const gapText = days === null ? "첫 연주" : `${days}일만`;
-    const gapClass = days === null ? "song-gap first" : "song-gap";
+    const displayName = highlightTags(song.trim());
+    const numberLabel = isUnknown(song) ? "-" : String(i + 1).padStart(2, "0");
 
-    const yearCount = getPlayCountThisYear(song, concert.date);
-    const yearCountText = `${year}년 ${yearCount}번째`;
+    let statsHtml;
+    if (isUnknown(song)) {
+      statsHtml = `<div class="song-gap">-</div>`;
+    } else {
+      const days = getDaysSinceLastPlayed(song, concert.date);
+      const gapText = days === null ? "첫 연주" : `${days}일만`;
+      const gapClass = days === null ? "song-gap first" : "song-gap";
+      const yearCount = getPlayCountThisYear(song, concert.date);
+      const yearCountText = `${year}년 ${yearCount}번째`;
+      statsHtml = `<div class="${gapClass}">${gapText}<span class="song-divider">|</span>${yearCountText}</div>`;
+    }
 
     return `
       <div class="song-row">
-        <div class="song-no">${String(i + 1).padStart(2, "0")}</div>
-        <div class="song-name">${song}</div>
-        <div class="${gapClass}">${gapText}<span class="song-divider">|</span>${yearCountText}</div>
+        <div class="song-no">${numberLabel}</div>
+        <div class="song-name">${displayName}</div>
+        ${statsHtml}
       </div>
     `;
   }).join("");
@@ -123,7 +154,7 @@ function renderSetlistView() {
   view.innerHTML = `
     <div class="sv-date">${formatDate(concert.date)}</div>
     <div class="sv-title">${concert.title}</div>
-    <div class="sv-venue">${concert.venue}<span class="sv-count">· ${concert.setlist.length}곡</span>${photoLink}</div>
+    <div class="sv-venue">${concert.venue}<span class="sv-count">· ${getCountLabel(concert)}</span>${photoLink}</div>
     <div class="song-list">${rows}</div>
   `;
 }
