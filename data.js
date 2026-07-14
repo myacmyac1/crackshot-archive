@@ -1758,8 +1758,8 @@ const CONCERTS = [
     ]
 },
 
-  {
-    id: "2022-03-27",
+{
+    id: "2022-03-27-1",
     date: "2022-03-27",
     title: "열린음악회",
     venue: "KBS",
@@ -1771,12 +1771,11 @@ const CONCERTS = [
     ]
 },
 
-
 {
-    id: "2022-03-27",
+    id: "2022-03-27-2",
     date: "2022-03-27",
     title: "크랙샷 9주년 콘서트",
-    venue: "yes24 라이브",
+    venue: "yes24 라이브홀",
     photoUrl: "https://www.instagram.com/crackshot_official/p/Cbm-_tXlyu1/",
 
     setlist: [
