@@ -42,9 +42,14 @@ html, body {
 
 .band-name {
   margin: 0;
-  font-size: 36px;
-  font-weight: 900;
-  letter-spacing: -0.5px;
+  line-height: 0; /* 이미지 아래 여백 제거 */
+}
+
+.band-logo {
+  display: block;
+  height: clamp(28px, 6vw, 44px); /* 화면 크기에 따라 자동으로 크기 조절 */
+  width: auto;
+  max-width: 100%;
 }
 
 .year-nav {
@@ -134,10 +139,13 @@ html, body {
 .concert-block .venue {
   font-size: 13px;
   color: var(--ink-dim);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 .concert-block .count {
-  margin-top: 8px;
   display: inline-block;
   font-size: 11px;
   color: var(--ink-dim);

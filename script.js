@@ -19,8 +19,8 @@ function normalizeSong(song) {
   return song.trim().toLowerCase();
 }
 
-function isUpcoming(song) {
-  return normalizeSong(song) === "COMING SOON";
+function isUnknown(song) {
+  return normalizeSong(song) === "coming soon";
 }
 
 // ---------- 이 곡을 이전에 연주한 날로부터 며칠만인지 계산 ----------
@@ -52,15 +52,15 @@ function getPlayCountThisYear(songName, currentDate) {
   ).length;
 }
 
-// ---------- 곡 수 라벨: Upcoming이 포함되어 있으면 "-", 아니면 "N곡" ----------
+// ---------- 곡 수 라벨: UNKNOWN이 포함되어 있으면 "-", 아니면 "N곡" ----------
 function getCountLabel(concert) {
-  const hasUpcoming = concert.setlist.some(isUpcoming);
-  return hasUpcoming ? "-" : `${concert.setlist.length}곡`;
+  const hasUnknown = concert.setlist.some(isUnknown);
+  return hasUnknown ? "-" : `${concert.setlist.length}곡`;
 }
 
 // ---------- (포지션체인지), (solo) 같은 태그를 포인트 컬러로 강조 ----------
 function highlightTags(songName) {
-  return songName.replace(/\((포지션 체인지|solo)\)/gi, '<span class="song-tag">($1)</span>');
+  return songName.replace(/\((포지션체인지|solo)\)/gi, '<span class="song-tag">($1)</span>');
 }
 
 // ---------- 연도 탭 렌더링 ----------
@@ -100,7 +100,6 @@ function renderConcertList() {
       <div class="date">${formatDate(concert.date)}</div>
       <div class="title">${concert.title}</div>
       <div class="venue">${concert.venue}<span class="count">${getCountLabel(concert)}</span></div>
-     
     `;
     block.onclick = () => {
       selectedConcertId = concert.id;
@@ -124,10 +123,10 @@ function renderSetlistView() {
 
   const rows = concert.setlist.map((song, i) => {
     const displayName = highlightTags(song.trim());
-    const numberLabel = isUpcoming(song) ? "-" : String(i + 1).padStart(2, "0");
+    const numberLabel = isUnknown(song) ? "-" : String(i + 1).padStart(2, "0");
 
     let statsHtml;
-    if (isUpcoming(song)) {
+    if (isUnknown(song)) {
       statsHtml = `<div class="song-gap">-</div>`;
     } else {
       const days = getDaysSinceLastPlayed(song, concert.date);
