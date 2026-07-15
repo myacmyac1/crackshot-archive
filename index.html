@@ -33,8 +33,19 @@
 
   <!-- 아카이브 뷰: 공연 블록 목록 + 세트리스트 -->
   <main class="main" id="archiveView">
-    <section class="concert-list" id="concertList">
-      <!-- 공연 블록 목록이 JS로 자동 생성됩니다 -->
+    <section class="concert-list-col">
+      <div class="search-box">
+        <input
+          type="text"
+          id="songSearch"
+          class="search-input"
+          placeholder="곡 검색 (예: wildfire)"
+          autocomplete="off"
+        >
+      </div>
+      <div class="concert-list" id="concertList">
+        <!-- 공연 블록 목록이 JS로 자동 생성됩니다 -->
+      </div>
     </section>
 
     <section class="setlist-view" id="setlistView">
