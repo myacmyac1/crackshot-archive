@@ -10,16 +10,29 @@
 
   <header class="header">
     <div class="header-inner">
-      <h1 class="band-name">
+      <button class="band-name" id="logoBtn" aria-label="캘린더로 이동">
         <img src="assets/crackshot-logo.png" alt="CRACKSHOT" class="band-logo">
-      </h1>
+      </button>
       <nav class="year-nav" id="yearNav">
-        <!-- 연도 탭이 JS로 자동 생성됩니다 -->
+        <!-- 연도 탭이 JS로 자동 생성됩니다 (아카이브 뷰에서만 보임) -->
       </nav>
     </div>
   </header>
 
-  <main class="main">
+  <!-- 캘린더 뷰: 첫 화면 / 로고 클릭 시 이동 -->
+  <main class="calendar-view" id="calendarView">
+    <div class="calendar-nav">
+      <button class="cal-arrow" id="prevMonth" aria-label="이전 달">‹</button>
+      <h2 class="calendar-title" id="calendarTitle"></h2>
+      <button class="cal-arrow" id="nextMonth" aria-label="다음 달">›</button>
+    </div>
+    <div class="calendar-grid" id="calendarGrid">
+      <!-- 캘린더가 JS로 자동 생성됩니다 -->
+    </div>
+  </main>
+
+  <!-- 아카이브 뷰: 공연 블록 목록 + 세트리스트 -->
+  <main class="main" id="archiveView">
     <section class="concert-list" id="concertList">
       <!-- 공연 블록 목록이 JS로 자동 생성됩니다 -->
     </section>
@@ -28,6 +41,16 @@
       <!-- 선택된 공연의 세트리스트가 JS로 자동 생성됩니다 -->
     </section>
   </main>
+
+  <!-- 세트리스트 없는 스케줄 클릭 시 뜨는 모달 -->
+  <div class="modal-overlay" id="scheduleModal">
+    <div class="modal-card">
+      <button class="modal-close" id="modalClose" aria-label="닫기">×</button>
+      <div class="modal-date" id="modalDate"></div>
+      <div class="modal-title" id="modalTitle"></div>
+      <div class="modal-memo" id="modalMemo"></div>
+    </div>
+  </div>
 
   <footer class="footer">
     <p>CRACKSHOT SETLIST ARCHIVE</p>

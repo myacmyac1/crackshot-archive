@@ -7,6 +7,10 @@ const sortedConcerts = [...CONCERTS].sort((a, b) => new Date(b.date) - new Date(
 
 let selectedYear = null;      // null이면 전체 연도
 let selectedConcertId = sortedConcerts[0]?.id || null; // 기본값: 가장 최근 공연
+let currentView = "calendar";  // "calendar" | "archive" — 첫 화면은 캘린더
+
+// 스케줄(세트리스트 없는 일정) - data.js에 없으면 빈 배열로 처리
+const scheduleItems = typeof SCHEDULE !== "undefined" ? SCHEDULE : [];
 
 // ---------- 날짜 포맷 (YYYY-MM-DD -> YYYY.MM.DD) ----------
 function formatDate(dateStr) {
@@ -159,7 +163,7 @@ function renderSetlistView() {
   }).join("");
 
   const photoLink = concert.photoUrl
-    ? `<a class="sv-photo-link" href="${concert.photoUrl}" target="_blank" rel="noopener noreferrer">추억의 책장 ↗</a>`
+    ? `<a class="sv-photo-link" href="${concert.photoUrl}" target="_blank" rel="noopener noreferrer">사진 보기 ↗</a>`
     : "";
 
   view.innerHTML = `
@@ -176,4 +180,141 @@ function renderAll() {
   renderSetlistView();
 }
 
-renderAll();
+// ============================================
+// 캘린더 뷰
+// ============================================
+
+const WEEKDAYS = ["일", "월", "화", "수", "목", "금", "토"];
+let calYear, calMonth; // calMonth: 0~11
+
+// 캘린더 초기 표시 월: 가장 최근 이벤트(공연 또는 스케줄)가 있는 달로 시작
+function initCalendarDate() {
+  const allDates = [
+    ...sortedConcerts.map(c => c.date),
+    ...scheduleItems.map(s => s.date)
+  ].sort((a, b) => new Date(b) - new Date(a));
+
+  const base = allDates.length ? new Date(allDates[0]) : new Date();
+  calYear = base.getFullYear();
+  calMonth = base.getMonth();
+}
+
+function renderCalendar() {
+  const grid = document.getElementById("calendarGrid");
+  const title = document.getElementById("calendarTitle");
+  title.textContent = `${calYear}. ${String(calMonth + 1).padStart(2, "0")}`;
+  grid.innerHTML = "";
+
+  WEEKDAYS.forEach(w => {
+    const cell = document.createElement("div");
+    cell.className = "cal-weekday";
+    cell.textContent = w;
+    grid.appendChild(cell);
+  });
+
+  const firstDay = new Date(calYear, calMonth, 1);
+  const startOffset = firstDay.getDay();
+  const daysInMonth = new Date(calYear, calMonth + 1, 0).getDate();
+
+  for (let i = 0; i < startOffset; i++) {
+    const empty = document.createElement("div");
+    empty.className = "cal-cell empty";
+    grid.appendChild(empty);
+  }
+
+  for (let day = 1; day <= daysInMonth; day++) {
+    const dateStr = `${calYear}-${String(calMonth + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+    const cell = document.createElement("div");
+    cell.className = "cal-cell";
+
+    const dayNum = document.createElement("div");
+    dayNum.className = "cal-daynum";
+    dayNum.textContent = day;
+    cell.appendChild(dayNum);
+
+    sortedConcerts
+      .filter(c => c.date === dateStr)
+      .forEach(concert => {
+        const tag = document.createElement("div");
+        tag.className = "cal-event cal-event-concert";
+        tag.textContent = concert.title;
+        tag.onclick = () => goToConcert(concert.id);
+        cell.appendChild(tag);
+      });
+
+    scheduleItems
+      .filter(s => s.date === dateStr)
+      .forEach(item => {
+        const tag = document.createElement("div");
+        tag.className = "cal-event cal-event-schedule";
+        tag.textContent = item.title;
+        tag.onclick = () => openScheduleModal(item);
+        cell.appendChild(tag);
+      });
+
+    grid.appendChild(cell);
+  }
+}
+
+// 캘린더에서 공연 제목 클릭 -> 아카이브 뷰로 이동 + 해당 공연 선택
+function goToConcert(concertId) {
+  const concert = sortedConcerts.find(c => c.id === concertId);
+  if (concert) selectedYear = concert.date.slice(0, 4);
+  selectedConcertId = concertId;
+  showView("archive");
+}
+
+// 세트리스트 없는 스케줄 클릭 -> 정보만 담긴 모달 표시
+function openScheduleModal(item) {
+  document.getElementById("modalDate").textContent = formatDate(item.date);
+  document.getElementById("modalTitle").textContent = item.title;
+  document.getElementById("modalMemo").textContent = item.memo || "";
+  document.getElementById("scheduleModal").classList.add("open");
+}
+
+function closeScheduleModal() {
+  document.getElementById("scheduleModal").classList.remove("open");
+}
+
+// ============================================
+// 뷰 전환 (캘린더 <-> 아카이브)
+// ============================================
+function showView(view) {
+  currentView = view;
+  const archiveEl = document.getElementById("archiveView");
+  const calendarEl = document.getElementById("calendarView");
+  const yearNavEl = document.getElementById("yearNav");
+
+  if (view === "calendar") {
+    archiveEl.style.display = "none";
+    calendarEl.style.display = "flex";
+    yearNavEl.style.display = "none";
+    renderCalendar();
+  } else {
+    calendarEl.style.display = "none";
+    archiveEl.style.display = "grid";
+    yearNavEl.style.display = "flex";
+    renderAll();
+  }
+}
+
+// ---------- 이벤트 연결 ----------
+document.getElementById("logoBtn").addEventListener("click", () => showView("calendar"));
+document.getElementById("prevMonth").addEventListener("click", () => {
+  calMonth--;
+  if (calMonth < 0) { calMonth = 11; calYear--; }
+  renderCalendar();
+});
+document.getElementById("nextMonth").addEventListener("click", () => {
+  calMonth++;
+  if (calMonth > 11) { calMonth = 0; calYear++; }
+  renderCalendar();
+});
+document.getElementById("modalClose").addEventListener("click", closeScheduleModal);
+document.getElementById("scheduleModal").addEventListener("click", (e) => {
+  if (e.target.id === "scheduleModal") closeScheduleModal();
+});
+
+// ---------- 초기 실행: 첫 화면은 캘린더 뷰 ----------
+initCalendarDate();
+showView("calendar");
