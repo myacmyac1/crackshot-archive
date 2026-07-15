@@ -10,7 +10,7 @@ const CONCERTS = [
     date: "2026-07-31",
     title: "2026 장흥 ROCK 페스티벌",
     venue: "장흥 물축제",
-    photoUrl: "null",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/Dahx7oSE2qy/",
     setlist: [
       "COMING SOON"
     ]
@@ -20,7 +20,7 @@ const CONCERTS = [
     date: "2026-07-25",
     title: "HAIL TO THE KING",
     venue: "홍대 클럽FF",
-    photoUrl: "null",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/DaUmkb4E8bm/",
     setlist: [
       "COMING SOON"
     ]
@@ -30,7 +30,7 @@ const CONCERTS = [
     date: "2026-07-19",
     title: "STILL ROLLING Vol.4",
     venue: "홍대 BENDER",
-    photoUrl: "null",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/DaAPih8ExIE/",
     setlist: [
       "COMING SOON"
     ]
