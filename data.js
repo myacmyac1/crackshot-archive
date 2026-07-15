@@ -698,11 +698,12 @@ const CONCERTS = [
 {
     id: "2024-11-23",
     date: "2024-11-23",
-    title: "SUDDENLY ROCK FESTA (순서수정필요)",
+    title: "SUDDENLY ROCK FESTA",
     venue: "고양아람누리 아람극장",
     photoUrl: "https://www.instagram.com/crackshot_official/p/DCtn0UKhMN_/",
 
     setlist: [
+      "Warriors",
       "Go Away",
       "Young & Wild",
       "Shake It!",
@@ -834,30 +835,30 @@ const CONCERTS = [
 {
     id: "2024-07-28",
     date: "2024-07-28",
-    title: "크랙샷 앨범 발매 기념 공연 충돌 (순서수정필요)",
+    title: "크랙샷 앨범 발매 기념 공연 충돌",
     venue: "홍대 롤링홀",
     photoUrl: "https://www.instagram.com/crackshot_official/p/C99xPWxSlH9/",
 
     setlist: [
-      "Time To Rise",
-      "Follow Me",
-      "Overdrive",
-      "Bye Goodbye",
-      "My Friend",
-      "Dream In The Mirror",
-      "Never Say You Loved Me",
+      "Night Rider",
       "DASH",
       "Shake It!",
+      "Never Say You Loved Me",
       "Midnight Crime",
       "Fade Away",
-      "Slow Motion",
-      "INFP",
-      "Party! Party!",
+      "My Friend",
+      "Dream In The Mirror",
       "Broken Love",
       "Break Down",
       "Young & Wild",
+      "Slow Motion",
+      "INFP",
+      "Party! Party!",
       "Go Away",
-      "Night Rider"
+      "Overdrive",
+      "Bye Goodbye",
+      "Time To Rise",
+      "Follow Me"
     ]
 },
 
@@ -1117,23 +1118,25 @@ const CONCERTS = [
 {
     id: "2023-10-19",
     date: "2023-10-19",
-    title: "광주 그라제 Rising Bullet (순서수정필요)",
+    title: "광주 그라제 Rising Bullet",
     venue: "광주 예술의전당",
     photoUrl: "https://www.instagram.com/crackshot_official/p/CylUUcaROcN/ ",
 
     setlist: [
-      "Warriors ",
+      "Shake It!",
+      "DASH",
+      "Warriors",
       "Time To Rise",
-      "INFP",
       "My Friend ",
       "Separate Ways",
       "Slow Motion",
+      "INFP",
       "Break Down ",
       "난 괜찮아",
-      "Overdrive ",
-      "Kickstart My Heart",
       "그대에게+붉은노을+여행을떠나요",
-      "Follow Me"
+      "Follow Me",
+      "Overdrive ",
+      "Kickstart My Heart"
     ]
 },
 
