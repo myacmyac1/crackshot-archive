@@ -76,14 +76,14 @@ function renderYearNav() {
   const allBtn = document.createElement("button");
   allBtn.className = "year-tab" + (selectedYear === null ? " active" : "");
   allBtn.textContent = "전체";
-  allBtn.onclick = () => { selectedYear = null; renderAll(); };
+  allBtn.onclick = () => { selectedYear = null; showView("archive"); };
   nav.appendChild(allBtn);
 
   years.forEach(year => {
     const btn = document.createElement("button");
     btn.className = "year-tab" + (selectedYear === year ? " active" : "");
     btn.textContent = year;
-    btn.onclick = () => { selectedYear = year; renderAll(); };
+    btn.onclick = () => { selectedYear = year; showView("archive"); };
     nav.appendChild(btn);
   });
 }
@@ -283,18 +283,18 @@ function showView(view) {
   currentView = view;
   const archiveEl = document.getElementById("archiveView");
   const calendarEl = document.getElementById("calendarView");
-  const yearNavEl = document.getElementById("yearNav");
+
+  renderYearNav(); // 연도 탭은 두 화면 모두에서 항상 표시
 
   if (view === "calendar") {
     archiveEl.style.display = "none";
     calendarEl.style.display = "flex";
-    yearNavEl.style.display = "none";
     renderCalendar();
   } else {
     calendarEl.style.display = "none";
     archiveEl.style.display = "grid";
-    yearNavEl.style.display = "flex";
-    renderAll();
+    renderConcertList();
+    renderSetlistView();
   }
 }
 
