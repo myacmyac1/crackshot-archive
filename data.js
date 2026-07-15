@@ -1883,14 +1883,6 @@ const SCHEDULE = [
     date: "2022-07-10",
     title: "[CX] 유니콘",
   },
-//   {
-//    date: "2022-07-01",
-//    title: "[CX] 팬싸인회",
-//  },
-//  {
-//    date: "2022-07-02",
-//    title: "[CX] 팬싸인회",
-//  },
   {
     date: "2022-07-03",
     title: "[VINCENT][CYAN] Green Road 게스트",
