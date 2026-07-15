@@ -1402,7 +1402,7 @@ const CONCERTS = [
       "달의 몰락",
       "Goodbye My Love",
       "Fade Away",
-      "Stay (Willy.K Guitar solo)",
+      "Stay - Willy (solo)",
       "Michael Jackson Medley",
       "Slow Motion",
       "난 괜찮아",
@@ -1430,7 +1430,7 @@ const CONCERTS = [
       "달의 몰락",
       "Goodbye My Love",
       "My Friend ",
-      "Unholy (CYAN Bass solo)",
+      "Unholy - CYAN (solo)",
       "Suzie Q ",
       "Party! Party!",
       "Slow Motion ",
@@ -1459,7 +1459,7 @@ const CONCERTS = [
       "달의 몰락 ",
       "Goodbye My Love",
       "Fellowship",
-      "(DannyLee Drum solo)",
+      "Danny (solo)",
       "Michael Jackson Medley",
       "Slow Motion ",
       "난 괜찮아",
@@ -1487,7 +1487,7 @@ const CONCERTS = [
       "달의 몰락",
       "Goodbye My Love",
       "Fade Away",
-      "Watch Over You (Vincent Vocal solo)",
+      "Watch Over You - Vincent (solo)",
       "Suzie Q ",
       "Party! Party!",
       "Slow Motion ",
@@ -1535,9 +1535,9 @@ const CONCERTS = [
       "Fade Away ",
       "My Friend ",
       "Butterfly",
-      "Fake Plastic Trees (Cyan solo)",
-      "One Day (Willy.K Guitar solo)",
-      "(DannyLee Drum solo)",
+      "Fake Plastic Trees - CYAN (solo)",
+      "One Day - Willy (solo)",
+      "Danny (solo)",
       "Out of my way",
       "Break Down ",
       "Slow Motion ",
@@ -1722,17 +1722,17 @@ const CONCERTS = [
       "Don't Close Your Eyes",
       "Slow Motion",
       "Let Me Out",
-      "Cynic (CYAN Bass solo)",
+      "Cynic - CYAN (solo)",
       "Midnight Crime ",
       "Ready to Fire",
       "Fellowship",
       "Break Down",
-      "Summer Rain (Willy.K Guitar solo)",
+      "Summer Rain - Willy (solo)",
       "Dream In The Mirror",
       "달의 몰락",
       "Wicked Stone",
       "난 괜찮아",
-      "(DannyLee Drum solo)",
+      "Danny (solo)",
       "Follow Me",
       "Slither",
       "Suzie Q",
@@ -1759,20 +1759,7 @@ const CONCERTS = [
 },
 
 {
-    id: "2022-03-27-1",
-    date: "2022-03-27",
-    title: "열린음악회",
-    venue: "KBS",
-    photoUrl: "https://www.instagram.com/crackshot_official/p/Cbm8SN2FoA4/",
-
-    setlist: [
-      "I don't want to miss a thing",
-      "Still loving you"
-    ]
-},
-
-{
-    id: "2022-03-27-2",
+    id: "2022-03-27",
     date: "2022-03-27",
     title: "크랙샷 9주년 콘서트",
     venue: "yes24 라이브홀",
@@ -1784,11 +1771,11 @@ const CONCERTS = [
       "Slow Motion",
       "Alone Again",
       "My Friend",
-      "I LOVE YOU (Dannylee Drum solo)",
+      "I LOVE YOU - Danny (solo)",
       "Break Down",
       "Out Of My Way",
       "달의 몰락",
-      "Cynic (CYAN Bass solo)",
+      "Cynic - CYAN (solo)",
       "Broken Love",
       "Vision Again",
       "난 괜찮아",
@@ -1798,7 +1785,41 @@ const CONCERTS = [
       "Follow Me"
     ]
 }
-
-  
-  
 ];
+
+
+//memo: "기타 클리닉"
+const SCHEDULE = [
+  {
+    date: "2026-05-23",
+    title: "[Willy] 스프링스 버스킹",
+  }
+  {
+    date: "2026-05-02",
+    title: "[Willy] 톤메이킹 클리닉",
+  }
+  {
+    date: "2026-04-04",
+    title: "[Willy] 2026 뮤니브 콘서트 심사",
+  }
+  {
+    date: "2025-11-08",
+    title: "[Willy] 기타쇼낙원 기타클리닉",
+  }
+  {
+    date: "2023-02-19",
+    title: "[방송]열린음악회",
+  }
+  {
+    date: "2022-05-13",
+    title: "[CYAN] 케이브라운 단독 콘서트 게스트",
+  }
+  {
+    date: "2022-03-27",
+    title: "[방송]열린음악회",
+  }
+];
+
+
+
+
