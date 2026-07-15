@@ -138,12 +138,15 @@ function renderSetlistView() {
         ? `<span class="stat-highlight">${yearCountText}</span>`
         : yearCountText;
 
-      // 이 곡을 처음 연주하는 거라면 "첫 연주"를 강조색으로 앞에 붙임 (그 외엔 표시 안 함)
-      const firstEverHtml = days === null
-        ? `<span class="stat-highlight">첫 연주</span><span class="song-divider">|</span>`
-        : "";
+      // "n일만" 문구: 200일 이상 지났을 때만 일반 색상으로 표시. 첫 연주면 강조색으로 표시.
+      let gapHtml = "";
+      if (days === null) {
+        gapHtml = `<span class="stat-highlight">첫 연주</span><span class="song-divider">|</span>`;
+      } else if (days >= 200) {
+        gapHtml = `${days}일만<span class="song-divider">|</span>`;
+      }
 
-      statsHtml = `<div class="song-gap">${firstEverHtml}${yearCountHtml}</div>`;
+      statsHtml = `<div class="song-gap">${gapHtml}${yearCountHtml}</div>`;
     }
 
     return `
