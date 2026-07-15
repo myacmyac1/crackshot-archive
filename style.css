@@ -102,6 +102,44 @@ html, body {
   }
 }
 
+/* ---------------- Concert list column (search + blocks) ---------------- */
+.concert-list-col {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.search-box {
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 14px;
+  border-radius: 10px;
+  padding: 11px 14px;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.search-input::placeholder {
+  color: var(--ink-dim);
+}
+
+.search-input:focus {
+  border-color: var(--accent);
+}
+
+.search-empty {
+  color: var(--ink-dim);
+  font-size: 13px;
+  padding: 20px 4px;
+}
+
 /* ---------------- Concert list (blocks) ---------------- */
 .concert-list {
   display: flex;

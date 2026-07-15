@@ -8,6 +8,7 @@ const sortedConcerts = [...CONCERTS].sort((a, b) => new Date(b.date) - new Date(
 let selectedYear = null;      // null이면 전체 연도
 let selectedConcertId = sortedConcerts[0]?.id || null; // 기본값: 가장 최근 공연
 let currentView = "calendar";  // "calendar" | "archive" — 첫 화면은 캘린더
+let searchTerm = "";           // 곡 검색어 (정규화된 소문자 상태로 저장)
 
 // 스케줄(세트리스트 없는 일정) - data.js에 없으면 빈 배열로 처리
 const scheduleItems = typeof SCHEDULE !== "undefined" ? SCHEDULE : [];
@@ -93,9 +94,23 @@ function renderConcertList() {
   const list = document.getElementById("concertList");
   list.innerHTML = "";
 
-  const filtered = selectedYear
+  let filtered = selectedYear
     ? sortedConcerts.filter(c => c.date.startsWith(selectedYear))
     : sortedConcerts;
+
+  if (searchTerm) {
+    filtered = filtered.filter(c =>
+      c.setlist.some(s => normalizeSong(s).includes(searchTerm))
+    );
+  }
+
+  if (filtered.length === 0) {
+    const empty = document.createElement("p");
+    empty.className = "search-empty";
+    empty.textContent = "일치하는 공연이 없습니다.";
+    list.appendChild(empty);
+    return;
+  }
 
   filtered.forEach(concert => {
     const block = document.createElement("div");
@@ -313,6 +328,10 @@ document.getElementById("nextMonth").addEventListener("click", () => {
 document.getElementById("modalClose").addEventListener("click", closeScheduleModal);
 document.getElementById("scheduleModal").addEventListener("click", (e) => {
   if (e.target.id === "scheduleModal") closeScheduleModal();
+});
+document.getElementById("songSearch").addEventListener("input", (e) => {
+  searchTerm = normalizeSong(e.target.value);
+  renderConcertList();
 });
 
 // ---------- 초기 실행: 첫 화면은 캘린더 뷰 ----------
