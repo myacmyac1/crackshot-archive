@@ -163,7 +163,7 @@ function renderSetlistView() {
   }).join("");
 
   const photoLink = concert.photoUrl
-    ? `<a class="sv-photo-link" href="${concert.photoUrl}" target="_blank" rel="noopener noreferrer">사진 보기 ↗</a>`
+    ? `<a class="sv-photo-link" href="${concert.photoUrl}" target="_blank" rel="noopener noreferrer">추억의 책장 ↗</a>`
     : "";
 
   view.innerHTML = `
