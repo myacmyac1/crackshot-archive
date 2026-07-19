@@ -372,7 +372,7 @@ const CONCERTS = [
       "Oops I did it again",
       "Still loving you",
       "Dream On",
-      "그대에게+붉은노을+여행을떠나요",
+      "그대에게 + 붉은노을 + 여행을떠나요",
       "LOUD! HOT! CRAZY!",
       "Follow Me",
     ]
@@ -404,7 +404,7 @@ const CONCERTS = [
       "난 괜찮아",
       "아파트",
       "Break Down",
-      "그대에게+붉은노을+여행을떠나요",
+      "그대에게 + 붉은노을 + 여행을떠나요",
       "INFP",
       "Follow Me",
       "DASH",
@@ -421,7 +421,7 @@ const CONCERTS = [
       "Young & Wild",
       "DASH",
       "Get Over",
-      "그대에게+붉은노을+여행을떠나요",
+      "그대에게 + 붉은노을 + 여행을떠나요",
       "INFP",
       "Go Away",
       "Overdrive",
@@ -734,7 +734,7 @@ const CONCERTS = [
       "난 괜찮아",
       "Young & Wild",
       "INFP",
-      "그대에게+붉은노을+여행을떠나요",
+      "그대에게 + 붉은노을 + 여행을떠나요",
       "Go Away",
       "Follow Me"
     ]
@@ -835,7 +835,7 @@ const CONCERTS = [
       "INFP",
       "Go Away",
       "예술이야",
-      "그대에게+붉은노을+여행을떠나요",
+      "그대에게 + 붉은노을 + 여행을떠나요",
       "Follow Me"
     ]
 },
@@ -972,7 +972,7 @@ const CONCERTS = [
       "DASH",
       "Slow Motion",
       "INFP",
-      "그대에게+붉은노을+여행을떠나요",
+      "그대에게 + 붉은노을 + 여행을떠나요",
       "Follow Me"
     ]
 },
@@ -1119,7 +1119,7 @@ const CONCERTS = [
       "INFP",
       "Hotel California",
       "Follow Me",
-      "그대에게+붉은노을+여행을떠나요"
+      "그대에게 + 붉은노을 + 여행을떠나요"
     ]
 },
 
@@ -1141,7 +1141,7 @@ const CONCERTS = [
       "INFP",
       "Break Down ",
       "난 괜찮아",
-      "그대에게+붉은노을+여행을떠나요",
+      "그대에게 + 붉은노을 + 여행을떠나요",
       "Follow Me",
       "Overdrive ",
       "Kickstart My Heart"
@@ -1234,7 +1234,7 @@ const CONCERTS = [
       "난 괜찮아",
       "Time To Rise",
       "INFP",
-      "그대에게+붉은노을+여행을떠나요",
+      "그대에게 + 붉은노을 + 여행을떠나요",
       "Follow Me"
     ]
 },
@@ -1298,7 +1298,7 @@ const CONCERTS = [
       "달의 몰락",
       "DASH",
       "INFP",
-      "그대에게+붉은노을+여행을떠나요",
+      "그대에게 + 붉은노을 + 여행을떠나요",
       "Follow Me",
       "잘못된 만남"
     ]
@@ -1315,7 +1315,7 @@ const CONCERTS = [
       "난 괜찮아",
       "Follow Me",
       "잘못된 만남",
-      "그대에게+붉은노을+여행을떠나요",
+      "그대에게 + 붉은노을 + 여행을떠나요",
       "DASH",
       "INFP"
     ]
