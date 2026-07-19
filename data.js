@@ -37,7 +37,15 @@ const CONCERTS = [
     venue: "홍대 BENDER",
     photoUrl: "https://www.instagram.com/crackshot_official/p/DaAPih8ExIE/",
     setlist: [
-      "COMING SOON"
+      "Walking on Fire",
+      "Young & Wild",
+      "LOUD! HOT! CRAZY!",
+      "Puppeteer",
+      "Take it Down",
+      "Suzie Q",
+      "Rock and Roll",
+      "INFP",
+      "Follow me"
     ]
   },
   {
