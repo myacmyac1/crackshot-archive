@@ -27,7 +27,15 @@ const CONCERTS = [
     venue: "홍대 클럽FF",
     photoUrl: "https://www.instagram.com/crackshot_official/p/DaUmkb4E8bm/",
     setlist: [
-      "COMING SOON"
+      "Young & Wild",
+      "Get Over",
+      "LOUD! HOT! CRAZY!",
+      "End of this way",
+      "Puppeteer",
+      "Bang Your Head",      
+      "Shake it!",      
+      "Suzie Q",
+      "Follow me"      
     ]
   },
   {
