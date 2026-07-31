@@ -15,9 +15,17 @@ const CONCERTS = [
     date: "2026-07-31",
     title: "2026 장흥 ROCK 페스티벌",
     venue: "장흥 물축제",
-    photoUrl: "https://www.instagram.com/crackshot_official/p/Dahx7oSE2qy/",
+    photoUrl: "https://www.instagram.com/p/DbdG-duAS8j",
     setlist: [
-      "COMING SOON"
+      "Young & Wild",
+      "Get Over",
+      "Shake It!",
+      "고속도로 로망스",
+      "Slow Motion",
+      "INFP",
+      "LOUD! HOT! CRAZY!",
+      "그대에게 + 붉은노을 + 여행을떠나요",
+      "Follow Me!"
     ]
   },
   {
