@@ -25,7 +25,7 @@ const CONCERTS = [
       "INFP",
       "LOUD! HOT! CRAZY!",
       "그대에게 + 붉은노을 + 여행을떠나요",
-      "Follow Me!"
+      "Follow Me"
     ]
   },
   {
