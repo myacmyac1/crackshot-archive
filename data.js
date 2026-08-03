@@ -11,6 +11,26 @@
 
 const CONCERTS = [
   {
+    id: "2026-08-22",
+    date: "2026-08-22",
+    title: "世代共感 세대공감5",
+    venue: "우무지",
+    photoUrl: "https://ticket.melon.com/performance/index.htm?prodId=213687",
+    setlist: [
+      "COMING SOON"
+    ]
+  },
+    {
+    id: "2026-08-15",
+    date: "2026-08-15",
+    title: "원모어 문래동프리덤",
+    venue: "후케즈",
+    photoUrl: "https://www.instagram.com/p/DbfgFeDoPGI/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    setlist: [
+      "COMING SOON"
+    ]
+  },
+  {
     id: "2026-07-31",
     date: "2026-07-31",
     title: "2026 장흥 ROCK 페스티벌",
