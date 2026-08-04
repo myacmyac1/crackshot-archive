@@ -202,16 +202,11 @@ function renderAll() {
 const WEEKDAYS = ["일", "월", "화", "수", "목", "금", "토"];
 let calYear, calMonth; // calMonth: 0~11
 
-// 캘린더 초기 표시 월: 가장 최근 이벤트(공연 또는 스케줄)가 있는 달로 시작
+// 캘린더 초기 표시 월: 오늘 날짜가 있는 달로 시작
 function initCalendarDate() {
-  const allDates = [
-    ...sortedConcerts.map(c => c.date),
-    ...scheduleItems.map(s => s.date)
-  ].sort((a, b) => new Date(b) - new Date(a));
-
-  const base = allDates.length ? new Date(allDates[0]) : new Date();
-  calYear = base.getFullYear();
-  calMonth = base.getMonth();
+  const today = new Date();
+  calYear = today.getFullYear();
+  calMonth = today.getMonth();
 }
 
 function renderCalendar() {
