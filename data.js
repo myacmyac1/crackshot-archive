@@ -11,6 +11,26 @@
 
 const CONCERTS = [
   {
+    id: "2026-10-04",
+    date: "2026-10-04",
+    title: "2026 렛츠락 페스티벌",
+    venue: "난지 한강공원",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/DbmdzcBmuY0/",
+    setlist: [
+      "COMING SOON"
+    ]
+  },
+  {
+    id: "2026-09-13",
+    date: "2026-09-13",
+    title: "동두천 락 페스티벌",
+    venue: "동두천 신천교 하부광장 특설무대",
+    photoUrl: "https://www.instagram.com/p/Dbk2Q5Nkx2F/?utm_source=ig_web_copy_link",
+    setlist: [
+      "COMING SOON"
+    ]
+  },
+  {
     id: "2026-08-22",
     date: "2026-08-22",
     title: "世代共感 세대공감5",
