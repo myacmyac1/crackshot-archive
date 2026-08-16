@@ -67,7 +67,15 @@ const CONCERTS = [
     venue: "후케즈",
     photoUrl: "https://www.instagram.com/p/DbfgFeDoPGI/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     setlist: [
-      "COMING SOON"
+      "Go Away",
+      "Young & Wild",
+      "Get Over",
+      "Night Rider",
+      "Bang Your Head",
+      "LOUD! HOT! CRAZY!",
+      "Overdrive",
+      "Follow me",
+      "INFP"
     ]
   },
   {
