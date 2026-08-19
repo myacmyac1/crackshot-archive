@@ -41,9 +41,9 @@ const CONCERTS = [
     ]
   },
   {
-    id: "2026-09-05",
-    date: "2026-09-05",
-    title: "(9/5-6 날짜미정) 잔다리 페스타",
+    id: "2026-09-06",
+    date: "2026-09-06",
+    title: "잔다리 페스타",
     venue: "홍대 인근",
     photoUrl: "https://www.instagram.com/zandarifesta/p/DbJBJE_y-R6/",
     setlist: [
