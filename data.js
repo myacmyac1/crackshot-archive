@@ -55,9 +55,17 @@ const CONCERTS = [
     date: "2026-08-22",
     title: "世代共感 세대공감5",
     venue: "우무지",
-    photoUrl: "https://ticket.melon.com/performance/index.htm?prodId=213687",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/DcWBmNwAeeK/",
     setlist: [
-      "COMING SOON"
+      "LOUD! HOT! CRAZY!",
+      "Young & Wild",
+      "Get Over",
+      "End of this way",
+      "Bang your Head",
+      "INFP",
+      "Suzie Q",
+      "Follow me",
+      "Overdrive"
     ]
   },
     {
@@ -65,7 +73,7 @@ const CONCERTS = [
     date: "2026-08-15",
     title: "원모어 문래동프리덤",
     venue: "후케즈",
-    photoUrl: "https://www.instagram.com/p/DbfgFeDoPGI/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/DcD5ItIgWwl/",
     setlist: [
       "Go Away",
       "Young & Wild",
