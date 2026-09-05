@@ -11,6 +11,16 @@
 
 const CONCERTS = [
   {
+    id: "2026-10-15",
+    date: "2026-10-15",
+    title: "라라라온",
+    venue: "클럽AOR",
+    photoUrl: "",
+    setlist: [
+      "COMING SOON"
+    ]
+  },
+  {
     id: "2026-10-11",
     date: "2026-10-11",
     title: "광주 버스킹 월드컵 초청공연",
@@ -26,6 +36,16 @@ const CONCERTS = [
     title: "2026 렛츠락 페스티벌",
     venue: "난지 한강공원",
     photoUrl: "https://www.instagram.com/crackshot_official/p/DbmdzcBmuY0/",
+    setlist: [
+      "COMING SOON"
+    ]
+  },
+  {
+    id: "2026-09-16",
+    date: "2026-09-16",
+    title: "뒤란",
+    venue: "울산 문화예술회관",
+    photoUrl: "",
     setlist: [
       "COMING SOON"
     ]
