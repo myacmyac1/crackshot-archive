@@ -65,9 +65,20 @@ const CONCERTS = [
     date: "2026-09-06",
     title: "잔다리 페스타",
     venue: "홍대 인근",
-    photoUrl: "https://www.instagram.com/zandarifesta/p/DbJBJE_y-R6/",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/Dc8y_GrgWL_/",
     setlist: [
-      "COMING SOON"
+      "DASH",
+      "Young & Wild",
+      "Get Over",
+      "Puppeteer",
+      "End of this way",
+      "Time to Rise",
+      "Bang Your Head",
+      "Shake It!",
+      "INFP",
+      "LOUD! HOT! CRAZY!",
+      "Follow me",
+      "Suzie Q"
     ]
   },
   {
