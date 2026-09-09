@@ -1950,6 +1950,10 @@ const SCHEDULE = [
   
 //일정
   {
+    date: "2026-11-01",
+    title: "*Willy* 낙원 기타쇼"
+  },
+  {
     date: "2026-06-13",
     title: "*Willy* 이자헌 단독 콘서트 게스트"
   },
