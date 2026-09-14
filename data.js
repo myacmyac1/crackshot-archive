@@ -55,9 +55,14 @@ const CONCERTS = [
     date: "2026-09-13",
     title: "동두천 락 페스티벌",
     venue: "동두천 신천교 하부광장 특설무대",
-    photoUrl: "https://www.instagram.com/p/Dbk2Q5Nkx2F/?utm_source=ig_web_copy_link",
+    photoUrl: "https://www.instagram.com/p/DdOiEQMgQz2/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==",
     setlist: [
-      "COMING SOON"
+      "Young & Wild",
+      "Get Over",
+      "Shake It!",
+      "INFP",
+      "LOUD! HOT! CRAZY!",
+      "Follow me"
     ]
   },
   {
