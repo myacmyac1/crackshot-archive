@@ -10,6 +10,26 @@
 // ============================================
 
 const CONCERTS = [
+   {
+    id: "2026-10-17",
+    date: "2026-10-17",
+    title: "-",
+    venue: "영천",
+    photoUrl: "",
+    setlist: [
+      "COMING SOON"
+    ]
+  },
+   {
+    id: "2026-10-18",
+    date: "2026-10-18",
+    title: "태고 락 페스티벌",
+    venue: "서울 광화문 특설무대",
+    photoUrl: "",
+    setlist: [
+      "COMING SOON"
+    ]
+  },
   {
     id: "2026-10-15",
     date: "2026-10-15",
@@ -37,7 +57,14 @@ const CONCERTS = [
     venue: "난지 한강공원",
     photoUrl: "https://www.instagram.com/crackshot_official/p/DbmdzcBmuY0/",
     setlist: [
-      "COMING SOON"
+      "Young & Wild",
+      "Get Over",
+      "Puppeteer",
+      "Bang Your Head",
+      "LOUD! HOT! CRAZY!",
+      "INFP",
+      "Suzie Q",
+      "Follow me"
     ]
   },
   {
