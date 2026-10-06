@@ -11,10 +11,20 @@
 
 const CONCERTS = [
    {
+    id: "2026-10-31",
+    date: "2026-10-31",
+    title: "-",
+    venue: "-",
+    photoUrl: "",
+    setlist: [
+      "COMING SOON"
+    ]
+  },
+   {
     id: "2026-10-17",
     date: "2026-10-17",
-    title: "-",
-    venue: "영천",
+    title: "임진왜란 영천성 수복 전투 승전 기념 락페스티벌 극락도락",
+    venue: "영천 은해사 육화원 앞마당",
     photoUrl: "",
     setlist: [
       "COMING SOON"
