@@ -13,8 +13,8 @@ const CONCERTS = [
    {
     id: "2026-10-31",
     date: "2026-10-31",
-    title: "-",
-    venue: "-",
+    title: "할로윈 기념 공연 Monster Mash",
+    venue: "홍대 클럽ff",
     photoUrl: "",
     setlist: [
       "COMING SOON"
