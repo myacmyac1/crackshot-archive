@@ -45,9 +45,15 @@ const CONCERTS = [
     date: "2026-10-15",
     title: "라라라온",
     venue: "클럽AOR",
-    photoUrl: "",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/DehJs1RgctK/",
     setlist: [
-      "COMING SOON"
+      "Puppeteer",
+      "Overdrive",
+      "Young & Wild",
+      "Bang Your Head",
+      "Loud! Hot! Crazy!",
+      "Follow me",
+      "INFP"
     ]
   },
   {
@@ -55,7 +61,7 @@ const CONCERTS = [
     date: "2026-10-11",
     title: "광주 버스킹 월드컵 초청공연",
     venue: "광주 국립아시아 문화전당 하늘마당",
-    photoUrl: "https://www.buskingworldcup.com/artist/artist2026.php#artist02",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/DeXFJ7JAckj/",
     setlist: [
       "COMING SOON"
     ]
