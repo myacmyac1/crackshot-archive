@@ -63,7 +63,12 @@ const CONCERTS = [
     venue: "광주 국립아시아 문화전당 하늘마당",
     photoUrl: "https://www.instagram.com/crackshot_official/p/DeXFJ7JAckj/",
     setlist: [
-      "COMING SOON"
+      "Young & Wild",
+       "Get Over",
+       "LOUD! HOT! CRAZY!",
+       "INFP",
+       "그대에게 + 붉은노을 + 여행을떠나요",
+       "Follow me"
     ]
   },
   {
@@ -90,7 +95,11 @@ const CONCERTS = [
     venue: "울산 문화예술회관",
     photoUrl: "",
     setlist: [
-      "COMING SOON"
+      "Young & Wild",
+       "Bye Goodbye",
+       "LOUD! HOT! CRAZY!",
+       "다짐",
+       "Follow me"       
     ]
   },
   {
