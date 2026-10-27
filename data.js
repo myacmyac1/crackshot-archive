@@ -10,6 +10,36 @@
 // ============================================
 
 const CONCERTS = [
+     {
+    id: "2026-12-18",
+    date: "2026-12-18",
+    title: "2026 Hero Rock Festival",
+    venue: "송도 컨벤시아",
+    photoUrl: "",
+    setlist: [
+      "COMING SOON"
+    ]
+  },
+     {
+    id: "2026-11-13",
+    date: "2026-11-13",
+    title: "Live Club Day Extended",
+    venue: "-",
+    photoUrl: "",
+    setlist: [
+      "COMING SOON"
+    ]
+  },
+     {
+    id: "2026-11-14",
+    date: "2026-11-14",
+    title: "문래동 프리덤 The Last Chance",
+    venue: "후케즈",
+    photoUrl: "",
+    setlist: [
+      "COMING SOON"
+    ]
+  },
    {
     id: "2026-10-31",
     date: "2026-10-31",
