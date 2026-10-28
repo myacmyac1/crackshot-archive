@@ -55,9 +55,12 @@ const CONCERTS = [
     date: "2026-10-17",
     title: "임진왜란 영천성 수복 전투 승전 기념 락페스티벌 극락도락",
     venue: "영천 은해사 육화원 앞마당",
-    photoUrl: "",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/DemJjglgQWZ/",
     setlist: [
-      "COMING SOON"
+      "Young & Wild",
+         "그대에게 + 붉은노을 + 여행을떠나요",
+         "INFP",
+         "Follow me"
     ]
   },
    {
@@ -65,9 +68,14 @@ const CONCERTS = [
     date: "2026-10-18",
     title: "태고 락 페스티벌",
     venue: "서울 광화문 특설무대",
-    photoUrl: "",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/DeowdIZgeAc/",
     setlist: [
-      "COMING SOON"
+      "Warriors",
+      "Young & Wild",
+      "Get Over",
+      "Bang Your Head",
+      "INFP",
+      "Follow me"
     ]
   },
   {
