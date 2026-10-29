@@ -24,7 +24,7 @@ const CONCERTS = [
     id: "2026-11-13",
     date: "2026-11-13",
     title: "Live Club Day Extended",
-    venue: "-",
+    venue: "홍대 프리버드",
     photoUrl: "",
     setlist: [
       "COMING SOON"
