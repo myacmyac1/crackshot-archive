@@ -47,7 +47,16 @@ const CONCERTS = [
     venue: "홍대 클럽ff",
     photoUrl: "",
     setlist: [
-      "COMING SOON"
+      "Skyfall",
+         "Young & Wild",
+         "Get Over",
+         "Rock is Dead",
+         "mOBSCENE",
+         "Puppeteer",
+         "INFP",
+         "LOUD! HOT! CRAZY!",
+         "Bang Your Head",
+         "Follow me"
     ]
   },
    {
