@@ -21,6 +21,16 @@ const CONCERTS = [
     ]
   },
      {
+    id: "2026-12-5",
+    date: "2026-12-5",
+    title: "로드페스트7",
+    venue: "홍대 롤링홀",
+    photoUrl: "https://www.instagram.com/diablokband/p/DfW3_BLEqKu/",
+    setlist: [
+      "COMING SOON"
+    ]
+  },     
+     {
     id: "2026-11-13",
     date: "2026-11-13",
     title: "Live Club Day Extended",
