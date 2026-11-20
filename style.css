@@ -728,6 +728,7 @@ button.song-name:hover {
 .sm-table-wrap {
   max-height: 240px;
   overflow-y: auto;
+  scrollbar-gutter: stable;
 }
 
 .sm-table {
@@ -759,7 +760,8 @@ button.song-name:hover {
 }
 
 .sm-t-mark {
-  width: 32px;
+  width: 44px;
+  padding-right: 14px;
   text-align: right;
 }
 
