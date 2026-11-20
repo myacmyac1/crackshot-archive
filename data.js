@@ -2091,6 +2091,10 @@ const SCHEDULE = [
   
 //일정
   {
+    date: "2026-12-27",
+    title: "*Willy* 메트로 가요제 시즌3 청음단"
+  },
+  {
     date: "2026-11-01",
     title: "*Willy* 낙원 기타쇼"
   },
