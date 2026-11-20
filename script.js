@@ -456,6 +456,7 @@ function openSongModal(songName) {
     <h3 class="sm-title" id="songModalTitle">${highlightTags(escapeHtml(songName.trim()))}</h3>
     <div class="sm-last">${lastHtml}</div>
 
+<div class="sm-chart">${bars}</div>
 
     <div class="sm-head"><span>공연별 연주 여부</span></div>
     <div class="sm-table-wrap">
