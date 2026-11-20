@@ -147,7 +147,7 @@ function renderReceipt() {
     <div class="rc-sum total"><span>TOTAL</span><span>${totalPlays}</span></div>
     ${top ? `<div class="rc-top">MOST HEARD · ${highlightTags(esc(top.name))} (${top.count})</div>` : ""}
     <div class="rc-rule"></div>
-    <div class="rc-thanks">THANK YOU FOR COMING</div>
+    <div class="rc-thanks">LOUD HOT CRAZY We are the Best Voice Of Rock & Roll</div>
     <div class="rc-barcode" aria-hidden="true"></div>
   `;
 }
