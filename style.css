@@ -209,6 +209,10 @@ a {
   font-weight: 700;
 }
 
+.concert-block.pending:not(.selected) .title {
+  color: var(--ink-mute);
+}
+
 .concert-block.selected .date,
 .concert-block.selected .title,
 .concert-block.selected .count {
@@ -760,8 +764,8 @@ button.song-name:hover {
 }
 
 .sm-t-mark {
-  width: 44px;
-  padding-right: 14px;
+  width: 52px;
+  padding-right: 30px;
   text-align: right;
 }
 

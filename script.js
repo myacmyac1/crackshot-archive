@@ -115,7 +115,9 @@ function renderConcertList() {
   filtered.forEach(concert => {
     const block = document.createElement("button");
     block.type = "button";
-    block.className = "concert-block" + (concert.id === selectedConcertId ? " selected" : "");
+    block.className = "concert-block"
+      + (concert.id === selectedConcertId ? " selected" : "")
+      + (concert.setlist.some(isUnknown) ? " pending" : "");
     block.innerHTML = `
       <span class="date">${formatDate(concert.date)}</span>
       <span class="info">
