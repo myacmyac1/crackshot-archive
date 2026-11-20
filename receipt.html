@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CRACKSHOT — My Receipt</title>
+<link rel="stylesheet" href="receipt.css">
+</head>
+<body>
+
+  <header class="r-header">
+    <a href="index.html" class="r-logo" aria-label="세트리스트 아카이브로 이동">
+      <img src="assets/crackshot-logo.png" alt="CRACKSHOT">
+    </a>
+    <a href="index.html" class="r-back">세트리스트 ›</a>
+  </header>
+
+  <!-- 1단계: 내가 간 공연 고르기 -->
+  <main class="r-pick" id="pickView">
+    <h1 class="r-h1">내가 간 공연을 체크하세요</h1>
+    <p class="r-sub">체크한 공연의 세트리스트로 영수증을 만들어요. 체크는 이 기기에 저장돼요.</p>
+
+    <div class="r-tools">
+      <button type="button" class="r-link" id="selectAll">전체 선택</button>
+      <button type="button" class="r-link" id="clearAll">전체 해제</button>
+      <span class="r-picked" id="pickedCount"></span>
+    </div>
+
+    <div class="r-list" id="concertChecks"></div>
+
+    <div class="r-actions">
+      <button type="button" class="r-btn" id="makeReceipt" disabled>결산하기</button>
+    </div>
+  </main>
+
+  <!-- 2단계: 영수증 -->
+  <main class="r-result" id="resultView" hidden>
+    <div class="r-paper-wrap">
+      <div class="r-paper" id="receiptPaper"></div>
+    </div>
+    <div class="r-actions r-actions-row">
+      <button type="button" class="r-btn ghost" id="backToPick">다시 고르기</button>
+      <button type="button" class="r-btn" id="saveImage">이미지 저장</button>
+    </div>
+    <p class="r-note" id="saveNote"></p>
+  </main>
+
+  <footer class="r-footer">CRACKSHOT SETLIST ARCHIVE</footer>
+
+  <script src="data.js"></script>
+  <script src="receipt.js"></script>
+</body>
+</html>
