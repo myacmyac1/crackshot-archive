@@ -1,16 +1,22 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
 
 :root {
-  --bg: #121113;
-  --panel: #19181b;
+  --bg: #0b0b0b;
+  --panel: #151416;
+  --ink: #f4f2ee;
+  --ink-dim: #a29ea4;
+  --ink-mute: #8d8990;
   --line: #2c2a2e;
-  --ink: #f2f0ea;
-  --ink-dim: #8f8b90;
+  --line-strong: #3a373c;
   --accent: #fc2525;
-  --accent-ink: #121113;
+  --accent-ink: #0c0c0c;
 }
 
-* { box-sizing: border-box; }
+/* 모든 글씨 자간 -50 (= -0.05em) */
+* {
+  box-sizing: border-box;
+  letter-spacing: -0.05em;
+}
 
 html, body {
   margin: 0;
@@ -18,6 +24,25 @@ html, body {
   background: var(--bg);
   color: var(--ink);
   font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+button, input {
+  font-family: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 /* ---------------- Header ---------------- */
@@ -30,324 +55,354 @@ html, body {
 }
 
 .header-inner {
-  max-width: 1100px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 28px 24px 20px;
+  padding: 11px 48px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 12px;
 }
 
 .band-name {
   margin: 0;
-  line-height: 0; /* 이미지 아래 여백 제거 */
+  padding: 0;
+  line-height: 0;
   background: none;
   border: none;
-  padding: 0;
   cursor: pointer;
 }
 
 .band-logo {
   display: block;
-  height: clamp(28px, 6vw, 44px); /* 화면 크기에 따라 자동으로 크기 조절 */
+  height: 28px;
   width: auto;
   max-width: 100%;
 }
 
 .year-nav {
   display: flex;
-  gap: 4px;
+  gap: 24px;
 }
 
 .year-tab {
   background: none;
-  border: 1px solid var(--line);
-  color: var(--ink-dim);
-  font-family: inherit;
-  font-size: 14px;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: #b4b0b6;
+  font-size: 13px;
   font-weight: 600;
-  padding: 7px 14px;
-  border-radius: 999px;
+  padding: 12px 2px;
   cursor: pointer;
-  transition: all 0.15s ease;
-}
-
-.year-tab:hover {
-  color: var(--ink);
-  border-color: var(--ink-dim);
 }
 
 .year-tab.active {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: var(--accent-ink);
+  color: #ffffff;
+  font-weight: 700;
+  border-bottom-color: var(--accent);
 }
 
 /* ---------------- Layout ---------------- */
 .main {
-  max-width: 1100px;
+  flex: 1;
+  width: 100%;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 32px 24px 80px;
-  display: none; /* JS로 전환, 첫 화면은 캘린더 */
-  grid-template-columns: 1fr 1.2fr;
-  gap: 28px;
+  padding: 24px 48px 36px;
+  display: none; /* JS로 전환 */
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+  gap: 56px;
   align-items: start;
 }
 
-@media (max-width: 800px) {
-  .main {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ---------------- Concert list column (search + blocks) ---------------- */
+/* ---------------- Concert list (left) ---------------- */
 .concert-list-col {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-}
-
-.search-box {
-  position: relative;
+  min-width: 0;
 }
 
 .search-input {
   width: 100%;
-  background: var(--panel);
-  border: 1px solid var(--line);
+  height: 40px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid var(--ink);
+  border-radius: 0;
   color: var(--ink);
-  font-family: inherit;
-  font-size: 14px;
-  border-radius: 10px;
-  padding: 11px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 0 2px;
+  margin-bottom: 14px;
   outline: none;
-  transition: border-color 0.15s ease;
 }
 
 .search-input::placeholder {
-  color: var(--ink-dim);
+  color: var(--ink-mute);
 }
 
 .search-input:focus {
-  border-color: var(--accent);
+  border-bottom-color: var(--accent);
 }
 
 .search-empty {
   color: var(--ink-dim);
-  font-size: 13px;
-  padding: 20px 4px;
+  font-size: 12px;
+  padding: 16px 4px;
+  margin: 0;
 }
 
-/* ---------------- Concert list (blocks) ---------------- */
 .concert-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
 }
 
+/* 선택해도 배경은 바뀌지 않고, 날짜와 곡 수만 빨간색으로 바뀝니다 */
 .concert-block {
-  border: 1px solid var(--line);
-  background: var(--panel);
-  border-radius: 10px;
-  padding: 16px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  border-top: 1px solid var(--line-strong);
+  color: var(--ink);
+  padding: 9px 16px;
   cursor: pointer;
-  transition: border-color 0.15s ease, background 0.15s ease;
 }
 
-.concert-block:hover {
-  border-color: var(--ink-dim);
-}
-
-.concert-block.selected {
-  border-color: var(--accent);
-  background: #201f16;
+.concert-block:last-child {
+  border-bottom: 1px solid var(--line-strong);
 }
 
 .concert-block .date {
-  font-size: 12px;
-  color: var(--accent);
+  width: 66px;
+  flex: none;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.5px;
+  font-variant-numeric: tabular-nums;
+}
+
+.concert-block .info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .concert-block .title {
-  font-size: 16px;
-  font-weight: 700;
-  margin: 4px 0 2px;
-}
-
-.concert-block .venue {
-  font-size: 13px;
-  color: var(--ink-dim);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.concert-block .count {
-  display: inline-block;
-  font-size: 11px;
-  color: var(--ink-dim);
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 2px 9px;
-}
-
-/* ---------------- Setlist view (right panel) ---------------- */
-.setlist-view {
-  border: 1px solid var(--line);
-  background: var(--panel);
-  border-radius: 14px;
-  padding: 28px 26px;
-  position: sticky;
-  top: 100px;
-}
-
-.setlist-view .sv-date {
-  font-size: 12px;
-  color: var(--accent);
-  font-weight: 700;
-  letter-spacing: 0.5px;
-}
-
-.setlist-view .sv-title {
-  font-size: 21px;
+  font-size: 14px;
   font-weight: 800;
-  margin: 6px 0 4px;
   line-height: 1.3;
 }
 
-.setlist-view .sv-venue {
-  font-size: 13px;
+.concert-block .venue {
+  font-size: 11px;
   color: var(--ink-dim);
-  margin-bottom: 22px;
+  margin-top: 2px;
+}
+
+.concert-block .count {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.concert-block.selected .date,
+.concert-block.selected .count {
+  color: var(--accent);
+}
+
+/* ---------------- Setlist view (right) ---------------- */
+.setlist-view {
+  min-width: 0;
+}
+
+.setlist-view .sv-date {
   display: flex;
   align-items: center;
   gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.setlist-view .sv-date::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+}
+
+.setlist-view .sv-title {
+  margin: 6px 0 7px;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.setlist-view .sv-venue {
+  display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 18px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-dim);
+}
+
+.sv-count {
+  color: var(--ink);
+  font-weight: 700;
 }
 
 .sv-photo-link {
-  display: inline-block;
-  font-size: 11px;
+  color: var(--ink);
   font-weight: 700;
-  color: var(--accent);
   text-decoration: none;
-  border: 1px solid var(--accent);
-  border-radius: 999px;
-  padding: 3px 10px;
-  transition: background 0.15s ease, color 0.15s ease;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 1px;
 }
 
-.sv-photo-link:hover {
-  background: var(--accent);
-  color: var(--accent-ink);
+.song-head {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-top: 16px;
+  padding: 5px 0;
+  border-bottom: 2px solid var(--ink);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--ink-mute);
 }
 
-.setlist-view .sv-count {
-  font-size: 12px;
-  color: var(--ink-dim);
-  margin-left: 6px;
+.song-head span:first-child {
+  width: 24px;
+  flex: none;
+}
+
+.song-head span:nth-child(2) {
+  flex: 1;
 }
 
 .song-row {
   display: flex;
+  flex-wrap: wrap;
   align-items: baseline;
-  gap: 14px;
-  padding: 11px 0;
+  gap: 3px 14px;
+  padding: 9px 0;
   border-bottom: 1px solid var(--line);
 }
 
 .song-row:last-child {
-  border-bottom: none;
+  border-bottom-color: var(--line-strong);
 }
 
 .song-no {
-  font-size: 13px;
-  color: var(--ink-dim);
+  width: 24px;
+  flex: none;
+  font-size: 11px;
   font-weight: 700;
-  width: 22px;
-  flex-shrink: 0;
+  font-variant-numeric: tabular-nums;
 }
 
 .song-name {
-  font-size: 16px;
-  font-weight: 600;
-  flex-grow: 1;
+  flex: 1 1 140px;
+  min-width: 0;
+  font-size: 15px;
+  font-weight: 700;
 }
 
+/* (solo), (포지션체인지) : 박스 없이 빨간 글씨만 */
 .song-tag {
   color: var(--accent);
-  font-weight: 700;
+  margin-left: 6px;
 }
 
 .song-gap {
-  font-size: 12px;
+  font-size: 11px;
   color: var(--ink-dim);
-  white-space: nowrap;
-  flex-shrink: 0;
 }
 
+/* 강조: 빨간 점 + 굵은 글씨 */
 .stat-highlight {
-  color: var(--accent);
+  color: var(--ink);
   font-weight: 700;
+}
+
+.stat-highlight::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  margin-right: 5px;
 }
 
 .song-divider {
   display: inline-block;
   margin: 0 7px;
-  color: var(--line);
-}
-
-@media (max-width: 480px) {
-  .song-row {
-    flex-wrap: wrap;
-  }
-  .song-gap {
-    white-space: normal;
-    margin-left: 36px; /* 번호 칸 너비만큼 들여쓰기 */
-  }
+  color: #4a474d;
 }
 
 /* ---------------- Calendar view ---------------- */
 .calendar-view {
-  max-width: 1100px;
+  flex: 1;
+  width: 100%;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 32px 24px 80px;
+  padding: 24px 48px 36px;
   display: none; /* JS로 전환 */
   flex-direction: column;
-  gap: 20px;
+}
+
+.calendar-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+}
+
+.calendar-title {
+  margin: 6px 0 0;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.25;
 }
 
 .calendar-nav {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-
-.calendar-title {
-  margin: 0;
-  font-size: 20px;
-  font-weight: 800;
-  min-width: 120px;
-  text-align: center;
-  letter-spacing: 0.5px;
+  gap: 8px;
 }
 
 .cal-arrow {
-  background: none;
-  border: 1px solid var(--line);
-  color: var(--ink);
-  font-size: 18px;
-  width: 34px;
-  height: 34px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  background: none;
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
-  transition: border-color 0.15s ease;
 }
 
 .cal-arrow:hover {
@@ -357,53 +412,46 @@ html, body {
 
 .calendar-grid {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 6px;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
 }
 
 .cal-weekday {
-  text-align: center;
-  font-size: 12px;
-  color: var(--ink-dim);
+  padding: 5px 8px;
+  border-bottom: 2px solid var(--ink);
+  font-size: 10px;
   font-weight: 700;
-  padding-bottom: 6px;
+  color: var(--ink-mute);
 }
 
 .cal-cell {
-  min-height: 92px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: 6px;
-  background: var(--panel);
+  min-height: 78px;
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--line);
   display: flex;
   flex-direction: column;
   gap: 4px;
-  overflow: hidden;
-}
-
-.cal-cell.empty {
-  border: none;
-  background: transparent;
+  min-width: 0;
 }
 
 .cal-daynum {
   font-size: 11px;
-  color: var(--ink-dim);
   font-weight: 700;
+  color: var(--ink-dim);
+  font-variant-numeric: tabular-nums;
 }
 
 .cal-event {
-  font-size: 11px;
-  font-weight: 600;
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: none;
+  border-radius: 0;
   padding: 3px 6px;
-  border-radius: 5px;
-  cursor: pointer;
+  font-size: 11px;
+  font-weight: 800;
   line-height: 1.3;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+  overflow-wrap: anywhere;
+  cursor: pointer;
 }
 
 .cal-event-concert {
@@ -411,33 +459,95 @@ html, body {
   color: var(--accent-ink);
 }
 
-.cal-event-concert:hover {
-  opacity: 0.85;
-}
-
 .cal-event-schedule {
   background: none;
-  border: 1px solid var(--ink-dim);
+  border: 1px solid #5a575d;
+  color: var(--ink-dim);
+  font-weight: 600;
+  padding: 2px 6px;
+}
+
+/* 모바일 전용 요소: 점과 이달의 일정 목록 (PC에서는 숨김) */
+.cal-dots {
+  display: none;
+  gap: 3px;
+  min-height: 6px;
+}
+
+.cal-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.cal-dot.concert {
+  background: var(--accent);
+}
+
+.cal-dot.schedule {
+  background: var(--ink-dim);
+}
+
+.calendar-agenda {
+  display: none;
+  margin-top: 24px;
+}
+
+.agenda-head {
+  padding: 5px 0;
+  border-bottom: 2px solid var(--ink);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--ink-mute);
+}
+
+.agenda-empty {
+  margin: 0;
+  padding: 12px 0;
+  font-size: 12px;
   color: var(--ink-dim);
 }
 
-.cal-event-schedule:hover {
-  border-color: var(--ink);
+.agenda-item {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--line);
   color: var(--ink);
+  padding: 9px 0;
+  cursor: pointer;
 }
 
-@media (max-width: 700px) {
-  .cal-cell {
-    min-height: 64px;
-    padding: 4px;
-  }
-  .cal-event {
-    font-size: 9.5px;
-    padding: 2px 4px;
-  }
-  .cal-weekday {
-    font-size: 10px;
-  }
+.agenda-date {
+  width: 40px;
+  flex: none;
+  font-size: 11px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.agenda-title {
+  flex: 1;
+  min-width: 0;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.agenda-item.concert .agenda-date {
+  color: var(--accent);
+}
+
+.agenda-item.schedule .agenda-date,
+.agenda-item.schedule .agenda-title {
+  color: var(--ink-dim);
+}
+
+.agenda-item.schedule .agenda-title {
+  font-weight: 600;
 }
 
 /* ---------------- Schedule modal ---------------- */
@@ -445,7 +555,7 @@ html, body {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.7);
   align-items: center;
   justify-content: center;
   padding: 20px;
@@ -459,8 +569,7 @@ html, body {
 .modal-card {
   position: relative;
   background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 14px;
+  border: 1px solid var(--line-strong);
   padding: 28px 26px;
   max-width: 360px;
   width: 100%;
@@ -468,14 +577,15 @@ html, body {
 
 .modal-close {
   position: absolute;
-  top: 14px;
-  right: 14px;
+  top: 10px;
+  right: 12px;
   background: none;
   border: none;
   color: var(--ink-dim);
-  font-size: 20px;
-  cursor: pointer;
+  font-size: 22px;
   line-height: 1;
+  padding: 6px;
+  cursor: pointer;
 }
 
 .modal-close:hover {
@@ -483,10 +593,9 @@ html, body {
 }
 
 .modal-date {
-  font-size: 12px;
-  color: var(--accent);
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.5px;
+  color: var(--accent);
 }
 
 .modal-title {
@@ -496,7 +605,7 @@ html, body {
 }
 
 .modal-memo {
-  font-size: 14px;
+  font-size: 13px;
   color: var(--ink-dim);
   line-height: 1.5;
   white-space: pre-line;
@@ -505,9 +614,80 @@ html, body {
 /* ---------------- Footer ---------------- */
 .footer {
   text-align: center;
-  color: var(--ink-dim);
-  font-size: 11px;
-  letter-spacing: 1px;
-  padding: 24px;
+  color: var(--ink-mute);
+  font-size: 10px;
+  padding: 14px;
   border-top: 1px solid var(--line);
+}
+
+.footer p {
+  margin: 0;
+}
+
+/* ---------------- Mobile ---------------- */
+@media (max-width: 800px) {
+  .header-inner {
+    padding: 8px 16px;
+  }
+
+  .band-logo {
+    height: 22px;
+  }
+
+  .year-nav {
+    gap: 16px;
+  }
+
+  .main {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 16px 16px 28px;
+  }
+
+  .search-input {
+    margin-bottom: 10px;
+  }
+
+  .concert-block {
+    gap: 12px;
+    padding: 9px 8px;
+  }
+
+  .concert-block .date {
+    width: 58px;
+  }
+
+  .song-name {
+    flex-basis: 90px;
+  }
+
+  /* 캘린더: 공연명 대신 점 + 하단 일정 목록 */
+  .calendar-view {
+    padding: 16px 16px 28px;
+  }
+
+  .calendar-head {
+    margin-bottom: 12px;
+  }
+
+  .cal-weekday {
+    padding: 5px 6px;
+  }
+
+  .cal-cell {
+    min-height: 46px;
+    padding: 6px;
+  }
+
+  .cal-event {
+    display: none;
+  }
+
+  .cal-dots {
+    display: flex;
+  }
+
+  .calendar-agenda {
+    display: block;
+  }
 }

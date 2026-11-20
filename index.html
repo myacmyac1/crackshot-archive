@@ -13,21 +13,30 @@
       <button class="band-name" id="logoBtn" aria-label="캘린더로 이동">
         <img src="assets/crackshot-logo.png" alt="CRACKSHOT" class="band-logo">
       </button>
-      <nav class="year-nav" id="yearNav">
-        <!-- 연도 탭이 JS로 자동 생성됩니다 (아카이브 뷰에서만 보임) -->
+      <nav class="year-nav" id="yearNav" aria-label="연도">
+        <!-- 연도 탭이 JS로 자동 생성됩니다 -->
       </nav>
     </div>
   </header>
 
   <!-- 캘린더 뷰: 첫 화면 / 로고 클릭 시 이동 -->
   <main class="calendar-view" id="calendarView">
-    <div class="calendar-nav">
-      <button class="cal-arrow" id="prevMonth" aria-label="이전 달">‹</button>
-      <h2 class="calendar-title" id="calendarTitle"></h2>
-      <button class="cal-arrow" id="nextMonth" aria-label="다음 달">›</button>
+    <div class="calendar-head">
+      <div>
+        <div class="eyebrow">CALENDAR</div>
+        <h2 class="calendar-title" id="calendarTitle"></h2>
+      </div>
+      <div class="calendar-nav">
+        <button class="cal-arrow" id="prevMonth" aria-label="이전 달">‹</button>
+        <button class="cal-arrow" id="nextMonth" aria-label="다음 달">›</button>
+      </div>
     </div>
     <div class="calendar-grid" id="calendarGrid">
       <!-- 캘린더가 JS로 자동 생성됩니다 -->
+    </div>
+    <!-- 모바일에서만 보이는 이달의 일정 목록 -->
+    <div class="calendar-agenda" id="calendarAgenda">
+      <!-- JS로 자동 생성됩니다 -->
     </div>
   </main>
 
@@ -36,10 +45,11 @@
     <section class="concert-list-col">
       <div class="search-box">
         <input
-          type="text"
+          type="search"
           id="songSearch"
           class="search-input"
-          placeholder="곡 검색 (예: INFP)"
+          placeholder="곡 검색 (예: wildfire)"
+          aria-label="곡 검색"
           autocomplete="off"
         >
       </div>

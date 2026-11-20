@@ -113,12 +113,16 @@ function renderConcertList() {
   }
 
   filtered.forEach(concert => {
-    const block = document.createElement("div");
+    const block = document.createElement("button");
+    block.type = "button";
     block.className = "concert-block" + (concert.id === selectedConcertId ? " selected" : "");
     block.innerHTML = `
-      <div class="date">${formatDate(concert.date)}</div>
-      <div class="title">${concert.title}</div>
-      <div class="venue">${concert.venue}<span class="count">${getCountLabel(concert)}</span></div>
+      <span class="date">${formatDate(concert.date)}</span>
+      <span class="info">
+        <span class="title">${concert.title}</span>
+        <span class="venue">${concert.venue}</span>
+      </span>
+      <span class="count">${getCountLabel(concert)}</span>
     `;
     block.onclick = () => {
       selectedConcertId = concert.id;
@@ -183,8 +187,9 @@ function renderSetlistView() {
 
   view.innerHTML = `
     <div class="sv-date">${formatDate(concert.date)}</div>
-    <div class="sv-title">${concert.title}</div>
-    <div class="sv-venue">${concert.venue}<span class="sv-count">· ${getCountLabel(concert)}</span>${photoLink}</div>
+    <h2 class="sv-title">${concert.title}</h2>
+    <div class="sv-venue"><span>${concert.venue}</span><span class="sv-count">${getCountLabel(concert)}</span>${photoLink}</div>
+    <div class="song-head"><span>NO</span><span>SONG</span><span>HISTORY</span></div>
     <div class="song-list">${rows}</div>
   `;
 }
@@ -242,28 +247,101 @@ function renderCalendar() {
     dayNum.textContent = day;
     cell.appendChild(dayNum);
 
-    sortedConcerts
-      .filter(c => c.date === dateStr)
-      .forEach(concert => {
-        const tag = document.createElement("div");
-        tag.className = "cal-event cal-event-concert";
-        tag.textContent = concert.title;
-        tag.onclick = () => goToConcert(concert.id);
-        cell.appendChild(tag);
-      });
+    const dayConcerts = sortedConcerts.filter(c => c.date === dateStr);
+    const daySchedules = scheduleItems.filter(s => s.date === dateStr);
 
-    scheduleItems
-      .filter(s => s.date === dateStr)
-      .forEach(item => {
-        const tag = document.createElement("div");
-        tag.className = "cal-event cal-event-schedule";
-        tag.textContent = item.title;
-        tag.onclick = () => openScheduleModal(item);
-        cell.appendChild(tag);
+    // PC: 날짜 칸에 공연명 / 일정명 표시
+    dayConcerts.forEach(concert => {
+      const tag = document.createElement("button");
+      tag.type = "button";
+      tag.className = "cal-event cal-event-concert";
+      tag.textContent = concert.title;
+      tag.onclick = () => goToConcert(concert.id);
+      cell.appendChild(tag);
+    });
+
+    daySchedules.forEach(item => {
+      const tag = document.createElement("button");
+      tag.type = "button";
+      tag.className = "cal-event cal-event-schedule";
+      tag.textContent = item.title;
+      tag.onclick = () => openScheduleModal(item);
+      cell.appendChild(tag);
+    });
+
+    // 모바일: 공연명 대신 점으로 표시 (빨강 = 공연, 회색 = 일정)
+    if (dayConcerts.length || daySchedules.length) {
+      const dots = document.createElement("div");
+      dots.className = "cal-dots";
+      dayConcerts.forEach(() => {
+        const dot = document.createElement("span");
+        dot.className = "cal-dot concert";
+        dots.appendChild(dot);
       });
+      daySchedules.forEach(() => {
+        const dot = document.createElement("span");
+        dot.className = "cal-dot schedule";
+        dots.appendChild(dot);
+      });
+      cell.appendChild(dots);
+    }
 
     grid.appendChild(cell);
   }
+
+  renderAgenda();
+}
+
+// ---------- 모바일: 캘린더 아래 "이달의 일정" 목록 ----------
+function renderAgenda() {
+  const agenda = document.getElementById("calendarAgenda");
+  const prefix = `${calYear}-${String(calMonth + 1).padStart(2, "0")}-`;
+
+  const items = [
+    ...sortedConcerts
+      .filter(c => c.date.startsWith(prefix))
+      .map(c => ({ type: "concert", date: c.date, title: c.title, concert: c })),
+    ...scheduleItems
+      .filter(s => s.date.startsWith(prefix))
+      .map(s => ({ type: "schedule", date: s.date, title: s.title, schedule: s }))
+  ].sort((a, b) => a.date.localeCompare(b.date));
+
+  agenda.innerHTML = "";
+
+  const head = document.createElement("div");
+  head.className = "agenda-head";
+  head.textContent = "이달의 일정";
+  agenda.appendChild(head);
+
+  if (items.length === 0) {
+    const empty = document.createElement("p");
+    empty.className = "agenda-empty";
+    empty.textContent = "이달의 일정이 없습니다.";
+    agenda.appendChild(empty);
+    return;
+  }
+
+  items.forEach(item => {
+    const row = document.createElement("button");
+    row.type = "button";
+    row.className = "agenda-item " + item.type;
+
+    const date = document.createElement("span");
+    date.className = "agenda-date";
+    date.textContent = item.date.slice(5).replace("-", ".");
+
+    const title = document.createElement("span");
+    title.className = "agenda-title";
+    title.textContent = item.title;
+
+    row.appendChild(date);
+    row.appendChild(title);
+    row.onclick = () => {
+      if (item.type === "concert") goToConcert(item.concert.id);
+      else openScheduleModal(item.schedule);
+    };
+    agenda.appendChild(row);
+  });
 }
 
 // 캘린더에서 공연 제목 클릭 -> 아카이브 뷰로 이동 + 해당 공연 선택
