@@ -30,14 +30,33 @@ const CONCERTS = [
       "COMING SOON"
     ]
   },     
+  {
+    id: "2026-11-27",
+    date: "2026-11-27",
+    title: "2026 대학밴드 최강전",
+    venue: "엠팟홀",
+    photoUrl: "https://www.instagram.com/diablokband/p/DfW3_BLEqKu/",
+    setlist: [
+      "COMING SOON"
+    ]
+  }, 
      {
     id: "2026-11-13",
     date: "2026-11-13",
     title: "Live Club Day Extended",
     venue: "홍대 프리버드",
-    photoUrl: "",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/Dfr_jEXmuam/",
     setlist: [
-      "COMING SOON"
+      "Night Rider",
+         "LOUD! HOT! CRAZY!",
+         "Get Over",
+         "Warriors",
+         "무녀도",
+         "End of this way",
+         "Overdrive",
+         "Bang Your Head",
+         "INFP",
+         "Bye Goodbye"
     ]
   },
      {
@@ -45,9 +64,17 @@ const CONCERTS = [
     date: "2026-11-14",
     title: "문래동 프리덤 The Last Chance",
     venue: "후케즈",
-    photoUrl: "",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/DfuP_QwAXPF/",
     setlist: [
-      "COMING SOON"
+      "Puppeteer",
+         "Young & Wild",
+         "Get Over",
+         "End of this way",
+         "Take it down",
+         "Bang Your Head",
+         "LOUD! HOT! CRAZY!",
+         "Follow me",
+         "INFP"
     ]
   },
    {
@@ -55,7 +82,7 @@ const CONCERTS = [
     date: "2026-10-31",
     title: "할로윈 기념 공연 Monster Mash",
     venue: "홍대 클럽ff",
-    photoUrl: "",
+    photoUrl: "https://www.instagram.com/crackshot_official/p/DfLk4QeAdLx/",
     setlist: [
       "Skyfall",
          "Young & Wild",
