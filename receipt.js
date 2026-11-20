@@ -76,7 +76,8 @@ const TOP_SONGS = [
   "Break Down", "Party! Party!", "Midnight Crime", "Suzie Q", "Ready To Fire", "Lost Memories",
   "Dream In The Mirror", "Shake It!", "Follow Me", "Slow Motion", "My Friend",
   "Don't Close Your Eyes", "Walking On Fire", "Never Say You Loved Me", "Broken Love",
-  "Let Me Out", "Puppeteer", "End of this way", "Bang Your Head"
+  "Let Me Out", "Puppeteer", "End of this way", "Bang Your Head", "Fade Away", "Vision Again", "Out Of My Way", "Shut It Down", 
+  "안녕 스무살", "Tomorrow"
 ];
 const topSet = new Set(TOP_SONGS.map(normalizeSong));
 const topName = new Map(TOP_SONGS.map(n => [normalizeSong(n), n])); // 위쪽 목록의 곡은 여기 적은 표기로 보여줘요
