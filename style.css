@@ -209,7 +209,9 @@ a {
   font-weight: 700;
 }
 
-.concert-block.pending:not(.selected) .title {
+.concert-block.pending:not(.selected) .date,
+.concert-block.pending:not(.selected) .title,
+.concert-block.pending:not(.selected) .count {
   color: var(--ink-mute);
 }
 

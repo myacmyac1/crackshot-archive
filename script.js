@@ -68,6 +68,13 @@ function highlightTags(songName) {
   return songName.replace(/\((포지션체인지|solo)\)/gi, '<span class="song-tag">($1)</span>');
 }
 
+// ---------- 연도 탭을 누르면: 그 연도(전체)에서 가장 위에 있는, 세트리스트가 확정된 공연을 선택 ----------
+function selectTopConcertOfYear(year) {
+  const list = year ? sortedConcerts.filter(c => c.date.startsWith(year)) : sortedConcerts;
+  const top = list.find(c => !c.setlist.some(isUnknown)) || list[0];
+  if (top) selectedConcertId = top.id;
+}
+
 // ---------- 연도 탭 렌더링 ----------
 function renderYearNav() {
   const years = [...new Set(sortedConcerts.map(c => c.date.slice(0, 4)))].sort((a, b) => b - a);
@@ -77,14 +84,14 @@ function renderYearNav() {
   const allBtn = document.createElement("button");
   allBtn.className = "year-tab" + (selectedYear === null ? " active" : "");
   allBtn.textContent = "전체";
-  allBtn.onclick = () => { selectedYear = null; showView("archive"); };
+  allBtn.onclick = () => { selectedYear = null; selectTopConcertOfYear(null); showView("archive"); };
   nav.appendChild(allBtn);
 
   years.forEach(year => {
     const btn = document.createElement("button");
     btn.className = "year-tab" + (selectedYear === year ? " active" : "");
     btn.textContent = year;
-    btn.onclick = () => { selectedYear = year; showView("archive"); };
+    btn.onclick = () => { selectedYear = year; selectTopConcertOfYear(year); showView("archive"); };
     nav.appendChild(btn);
   });
 }
