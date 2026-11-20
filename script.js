@@ -175,7 +175,9 @@ function renderSetlistView() {
     return `
       <div class="song-row">
         <div class="song-no">${numberLabel}</div>
-        <div class="song-name">${displayName}</div>
+        ${isUnknown(song)
+          ? `<div class="song-name">${displayName}</div>`
+          : `<button type="button" class="song-name" data-i="${i}" title="곡 기록 보기">${displayName}</button>`}
         ${statsHtml}
       </div>
     `;
@@ -365,6 +367,109 @@ function closeScheduleModal() {
 }
 
 // ============================================
+// 곡 기록 팝업 (곡 이름 클릭)
+// ============================================
+
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+// 이 곡의 전체 연주 기록 계산 (대소문자·앞뒤 공백 무시)
+function getSongHistory(songName) {
+  const target = normalizeSong(songName);
+
+  // sortedConcerts는 최신순
+  const rows = sortedConcerts.map(c => {
+    const played = c.setlist.some(s => normalizeSong(s) === target);
+    const unknown = !played && c.setlist.some(isUnknown); // 세트리스트가 아직 미정인 공연
+    return { concert: c, played, unknown };
+  });
+
+  const playedRows = rows.filter(r => r.played);
+  const last = playedRows.length ? playedRows[0].concert : null;
+
+  // 첫 공연 연도 ~ 마지막 공연 연도까지, 연주 0회인 해도 포함
+  const yearNums = sortedConcerts.map(c => Number(c.date.slice(0, 4)));
+  const minY = Math.min(...yearNums);
+  const maxY = Math.max(...yearNums);
+  const yearCounts = [];
+  for (let y = minY; y <= maxY; y++) {
+    yearCounts.push({
+      year: y,
+      count: playedRows.filter(r => Number(r.concert.date.slice(0, 4)) === y).length
+    });
+  }
+
+  return { rows, total: playedRows.length, last, yearCounts };
+}
+
+let songModalOpener = null; // 팝업 닫은 뒤 포커스를 돌려줄 요소
+
+function openSongModal(songName) {
+  const h = getSongHistory(songName);
+  const maxCount = Math.max(1, ...h.yearCounts.map(y => y.count));
+
+  const lastHtml = h.last
+    ? `<span class="sm-label">마지막 연주</span>
+       <span class="sm-last-date">${formatDate(h.last.date)}</span>
+       <span class="sm-last-title">${escapeHtml(h.last.title)}</span>`
+    : `<span class="sm-label">마지막 연주</span>
+       <span class="sm-last-title">기록이 없습니다</span>`;
+
+  const bars = h.yearCounts.map(y => {
+    const px = y.count ? Math.max(4, Math.round((y.count / maxCount) * 52)) : 2;
+    return `
+      <div class="sm-col" title="${y.year}년 ${y.count}회">
+        <span class="sm-count${y.count ? "" : " zero"}">${y.count}</span>
+        <span class="sm-bar${y.count ? "" : " zero"}" style="height:${px}px"></span>
+        <span class="sm-year">${y.year}</span>
+      </div>`;
+  }).join("");
+
+  const tableRows = h.rows.map(r => {
+    let mark;
+    if (r.played) mark = `<span class="sm-circle played" role="img" aria-label="연주함"></span>`;
+    else if (r.unknown) mark = `<span class="sm-unknown" aria-label="세트리스트 미정">-</span>`;
+    else mark = `<span class="sm-circle none" role="img" aria-label="연주 안 함"></span>`;
+    return `
+      <tr class="sm-row${r.played ? " played" : ""}">
+        <td class="sm-t-date">${formatDate(r.concert.date)}</td>
+        <td class="sm-t-title">${escapeHtml(r.concert.title)}</td>
+        <td class="sm-t-mark">${mark}</td>
+      </tr>`;
+  }).join("");
+
+  document.getElementById("songModalBody").innerHTML = `
+    <h3 class="sm-title" id="songModalTitle">${highlightTags(escapeHtml(songName.trim()))}</h3>
+    <div class="sm-last">${lastHtml}</div>
+
+    <div class="sm-head"><span>연도별 연주 횟수</span><span class="sm-total">총 ${h.total}회</span></div>
+    <div class="sm-chart">${bars}</div>
+
+    <div class="sm-head"><span>공연별 연주 여부</span></div>
+    <div class="sm-table-wrap">
+      <table class="sm-table"><tbody>${tableRows}</tbody></table>
+    </div>
+  `;
+
+  songModalOpener = document.activeElement;
+  document.getElementById("songModal").classList.add("open");
+  document.getElementById("songModalClose").focus();
+}
+
+function closeSongModal() {
+  const modal = document.getElementById("songModal");
+  if (!modal.classList.contains("open")) return;
+  modal.classList.remove("open");
+  if (songModalOpener && songModalOpener.focus) songModalOpener.focus();
+  songModalOpener = null;
+}
+
+// ============================================
 // 뷰 전환 (캘린더 <-> 아카이브)
 // ============================================
 function showView(view) {
@@ -405,6 +510,25 @@ document.getElementById("scheduleModal").addEventListener("click", (e) => {
 document.getElementById("songSearch").addEventListener("input", (e) => {
   searchTerm = normalizeSong(e.target.value);
   renderConcertList();
+});
+
+// 곡 이름 클릭 -> 곡 기록 팝업
+document.getElementById("setlistView").addEventListener("click", (e) => {
+  const btn = e.target.closest("button.song-name");
+  if (!btn) return;
+  const concert = sortedConcerts.find(c => c.id === selectedConcertId);
+  const song = concert ? concert.setlist[Number(btn.dataset.i)] : null;
+  if (song) openSongModal(song);
+});
+document.getElementById("songModalClose").addEventListener("click", closeSongModal);
+document.getElementById("songModal").addEventListener("click", (e) => {
+  if (e.target.id === "songModal") closeSongModal();
+});
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    closeSongModal();
+    closeScheduleModal();
+  }
 });
 
 // ---------- 초기 실행: 첫 화면은 캘린더 뷰 ----------

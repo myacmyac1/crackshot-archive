@@ -45,7 +45,7 @@
           type="search"
           id="songSearch"
           class="search-input"
-          placeholder="곡 검색 (예: INFP)"
+          placeholder="곡 검색 (예: wildfire)"
           aria-label="곡 검색"
           autocomplete="off"
         >
@@ -67,6 +67,16 @@
       <div class="modal-date" id="modalDate"></div>
       <div class="modal-title" id="modalTitle"></div>
       <div class="modal-memo" id="modalMemo"></div>
+    </div>
+  </div>
+
+  <!-- 곡 이름 클릭 시 뜨는 곡 기록 팝업 -->
+  <div class="modal-overlay" id="songModal">
+    <div class="modal-card song-card" role="dialog" aria-modal="true" aria-labelledby="songModalTitle">
+      <button class="modal-close" id="songModalClose" aria-label="닫기">×</button>
+      <div id="songModalBody">
+        <!-- JS로 자동 생성됩니다 -->
+      </div>
     </div>
   </div>
 

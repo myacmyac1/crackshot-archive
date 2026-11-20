@@ -313,6 +313,24 @@ a {
   font-size: 15px;
   font-weight: 500;
   line-height: 1.4;
+  text-align: left;
+}
+
+/* 곡 이름은 버튼: 누르면 곡 기록 팝업 */
+button.song-name {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: inherit;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+button.song-name:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 4px;
 }
 
 /* (solo), (포지션체인지) : 박스 없이 빨간 글씨만 */
@@ -597,6 +615,172 @@ a {
   color: var(--ink-dim);
   line-height: 1.5;
   white-space: pre-line;
+}
+
+/* ---------------- Song history popup ---------------- */
+.song-card {
+  max-width: 440px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  padding: 28px 26px 24px;
+}
+
+.sm-title {
+  margin: 0 0 10px;
+  padding-right: 28px;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.sm-title .song-tag {
+  margin-left: 6px;
+}
+
+.sm-last {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.sm-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--ink-mute);
+}
+
+.sm-last-date {
+  font-weight: 700;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.sm-last-title {
+  color: var(--ink);
+}
+
+.sm-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 28px;
+  padding: 8px 0;
+  border-bottom: 2px solid var(--ink);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--ink-mute);
+}
+
+.sm-total {
+  color: var(--ink);
+}
+
+/* 연도별 막대 그래프 */
+.sm-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  height: 100px;
+  padding-top: 14px;
+}
+
+.sm-col {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+}
+
+.sm-count {
+  font-size: 11px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.sm-count.zero,
+.sm-year {
+  color: var(--ink-mute);
+}
+
+.sm-year {
+  font-size: 10px;
+  font-variant-numeric: tabular-nums;
+}
+
+.sm-bar {
+  width: 100%;
+  max-width: 28px;
+  background: var(--accent);
+}
+
+.sm-bar.zero {
+  background: var(--line-strong);
+}
+
+/* 공연별 체크표 */
+.sm-table-wrap {
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.sm-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.sm-table td {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 11px;
+  line-height: 1.4;
+  vertical-align: middle;
+}
+
+.sm-t-date {
+  width: 76px;
+  color: var(--ink-dim);
+  font-variant-numeric: tabular-nums;
+}
+
+.sm-t-title {
+  color: var(--ink-dim);
+  padding-right: 12px;
+}
+
+.sm-row.played .sm-t-title {
+  color: var(--ink);
+}
+
+.sm-t-mark {
+  width: 32px;
+  text-align: right;
+}
+
+.sm-circle {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.sm-circle.played {
+  background: var(--accent);
+}
+
+.sm-circle.none {
+  border: 1px solid var(--line-strong);
+}
+
+.sm-unknown {
+  color: var(--ink-mute);
 }
 
 /* ---------------- Footer ---------------- */
